@@ -1,4 +1,4 @@
-# grc-toolkit
+# grc-suite
 A collection of tools, templates and scripts to support GRC functions across security, privacy and audit domains. 
 
   [![Test Suite](https://github.com/ajy0127/grc_portfolio/actions/workflows/test.yml/badge.svg)](https://github.com/ajy0127/grc_portfolio/actions/workflows/test.yml)
