@@ -18,9 +18,9 @@ A collection of tools, templates and scripts to support GRC functions across sec
 
 ## Project Vision
 
-This GRC Portfolio Hub is my initiative to empower Governance, Risk, and Compliance professionals in showcasing their practical AWS GRC engineering implementation skills. Drawing from my 15 years of cybersecurity experience and deep expertise in GRC Engineering, I've created this repository to bridge the gap between theoretical knowledge and hands-on expertise by providing ready-to-deploy labs, comprehensive guidance, and a structured portfolio framework.
+This GRC Suite is my initiative to empower Governance, Risk, and Compliance professionals with technical implementation skills. Drawing from my cybersecurity experience and deep expertise in GRC Engineering and Auditing, I've created this repository to bridge the gap between theoretical knowledge and hands-on expertise, comprehensive guidance, and a structured portfolio framework.
 
-My mission is to create the industry's premier open-source resource for GRC professionals to demonstrate practical AWS GRC engineering skills through guided, hands-on experiences that directly align with employer needs and AWS best practices.
+My mission is to create the industry's premier open-source resource for GRC professionals to demonstrate practical GRC skills through guided, hands-on experiences that directly align with best practices.
 
 ## About the Author
 
@@ -32,12 +32,11 @@ I'm [Nathaniel Konu](https://www.linkedin.com/in/nkonu/), a cybersecurity profes
 - **YouTube Learning**: Teach courses on GRC, cloud compliance and automation on my Youtube channel including GRC courses. 
 - **Current Role**: Senior GRC Engineering at Clario
 
-Throughout my career, I've been driven by the mission to make compliance more efficient and accessible through automation and merging engineering principles with compliance. This portfolio hub represents my experiences and lessons learned in GRC.
+Throughout my career, I've been driven by the mission to make compliance more efficient and accessible through automation and merging engineering principles with compliance. This grc suite represents my experiences and lessons learned in GRC.
 
 ## What's Inside
 
-- **Portfolio Templates**: Professional templates for creating your GRC portfolio, optimized for GitHub and ready to showcase your skills to potential employers
-- **Hands-on Labs**: Comprehensive, step-by-step labs covering core AWS security domains
+- **Hands-on Labs**: Comprehensive, step-by-step labs covering core security and GRC domains
 - **Full Code Implementations**: Complete CloudFormation templates for all labs
 - **Advanced Challenges**: Stretch goals and real-world scenarios to demonstrate advanced skills
 - **Learning Resources**: Curated references, comparison charts, and learning paths
@@ -57,20 +56,6 @@ GRC_Portfolio/
 ├── resources/ - AWS security services guide
 └── config/ - Configuration files for testing and development
 ```
-
-**Coming Soon:** Additional labs will be released weekly, leading up to the book launch. Each new lab will introduce additional AWS security domains and challenges. Stay tuned for:
-
-- IAM Implementation
-- Security Automation with IaC
-- Security Monitoring and Incident Response
-- Compliance Automation
-- Data Security and Protection
-- Risk Assessment and Threat Modeling
-- Infrastructure and Network Protection
-- Incident Response and Recovery
-- Policy as Code implementation
-- Advanced multi-lab integration challenges and capstone projects
-
 ## Labs Overview
 
 Currently available:
@@ -84,10 +69,11 @@ Each lab includes:
 - Validation checklists and troubleshooting guides
 - Advanced challenges to extend your learning
 
-## Future Labs (Coming Weekly)
+## Future Labs (Coming monthly)
 
-Following our progressive release strategy, we'll be introducing new labs regularly, covering:
+Each new lab and video will introduce additional GRC and security domains, covering:
 
+- **Compliance Framework**: Implementation of frameworks that provides structured approacj to achieving and maintaining compliance with applicable regulatory, and security requirements.
 - **Identity and Access Management (IAM)**: Implementation of least privilege access controls
 - **Security Automation with Infrastructure as Code**: Implementing security guardrails through IaC
 - **Security Monitoring and Incident Response**: Setting up effective monitoring systems
