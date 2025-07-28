@@ -5,7 +5,7 @@ A collection of tools, templates and scripts to support GRC functions across sec
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-In%20Development-yellow" alt="Status: In Development">
-  <img src="https://img.shields.io/badge/AWS-Security-orange" alt="AWS Security">
+  <img src="https://img.shields.io/badge/Security-orange" alt="Security">
   <img src="https://img.shields.io/badge/Focus-GRC-blue" alt="Focus: GRC">
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License: MIT">
 </p>
@@ -24,7 +24,7 @@ My mission is to create the industry's premier open-source resource for GRC prof
 
 ## About the Author
 
-I'm [Nathaniel Konu](https://www.linkedin.com/in/nkonu/), a cybersecurity professional with nearly 15 years of experience specializing in GRC Engineering and compliance automation. My journey includes:
+I'm [Nathaniel Konu](https://www.linkedin.com/in/nkonu/), a cybersecurity professional with nearly 15 years of experience specializing in GRC Engineering, compliance automation, risk management, and security operation. My journey includes:
 
 - **Auditing Excellence**: At Insight Assurance, helped with the growth of the audit practice, advancing from junior auditor to staff auditor.
 - **Consulting Success**: At SkyTech Consulting, a compliance automation consultancy, focusing on NIST, ISO Seriees, FedRamp, SOC 2 and HIPAA automation
@@ -46,13 +46,17 @@ Throughout my career, I've been driven by the mission to make compliance more ef
 This repository is part of a progressive release strategy for my youtube channel  [RelevantGrc: Secure by design, Compliant by default](https://www.youtube.com/channel/UClRL3C3I8eWrlbISV1n1Bgg). Currently, it includes:
 
 ```
-GRC_Portfolio/
+GRC_suite/
 ├── README.md - You are here!
-├── CONTRIBUTING.md - Guidelines for contributors
+├── Compliance/ - Guidelines for contributors
+│    └── core documents
+│    └── map controls
+│    └── measure performance
 ├── LICENSE - Project license
-├── portfolio-templates/ - Templates and examples for your GRC portfolio
+├── portfolio/ - My GRC portfolio
 ├── labs/ - Hands-on AWS, Azure security labs with full code and documentation
-│   └── lab-1-account-governance/ - AWS account security foundations 
+│   └── lab-1-account-governance/ - AWS account security foundations
+│   └── lab-2-control_as_code/ - AWS account security foundations
 ├── resources/ - AWS security services guide
 └── config/ - Configuration files for testing and development
 ```
