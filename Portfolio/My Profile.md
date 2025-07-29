@@ -2,16 +2,16 @@
 
 <div align="center">
   <h1>Nathaniel Konu</h1>
-  <p><em>AWS Security & Compliance Leader</em></p>
+  <p><em>Security Engineering & Compliance Leader</em></p>
   
   <p>
-    <strong>Email:</strong> sarah.chen@example.com<br>
-    <strong>LinkedIn:</strong> linkedin.com/in/sarahchen<br>
-    <strong>GitHub:</strong> github.com/sarahchen
+    <strong>Email:</strong> nathanielkonu10@gmail.com<br>
+    <strong>LinkedIn:</strong> linkedin.com/in/nkonu<br>
+    <strong>GitHub:</strong> github.com/relevantGRC
   </p>
   
   <p>
-    <strong>AWS Certified</strong> | 
+    <strong>CISA Certified</strong> | 
     <strong>Security Expert</strong> | 
     <strong>Compliance Specialist</strong> | 
     <strong>Risk Management</strong>
@@ -19,17 +19,6 @@
 </div>
 
 ## Professional Overview
-
-```mermaid
-graph LR
-    A[GRC Leadership] --> B[AWS Security Architecture]
-    A --> C[Compliance Frameworks]
-    A --> D[Risk Management]
-    B --> E[Multi-Account Security]
-    B --> F[Security Automation]
-    C --> G[Continuous Compliance]
-    D --> H[Threat Modeling]
-```
 
 With over 15 years of experience in information security and the last 8 years specializing in cloud security governance, I've led enterprise-scale AWS security transformations across financial services, healthcare, and technology sectors. My expertise lies in architecting comprehensive security and compliance programs that enable business agility while maintaining robust security postures. I've successfully guided multiple organizations through complex regulatory audits (PCI-DSS, HIPAA, SOC2) while reducing operational overhead through innovative security automation solutions.
 
