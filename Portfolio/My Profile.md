@@ -110,7 +110,7 @@ A global financial services firm needed to migrate critical applications to AWS 
 - Successfully passed four consecutive compliance audits with zero findings
 - Reduced security operational overhead by 60% through automation
 
-**Link**: [Detailed implementation repository](https://github.com/sarahchen/fs-security-framework)
+**Link**: [Detailed implementation repository]([https://github.com/relevantGRC/grc-suite])
 
 ### Healthcare Compliance Automation Platform
 
