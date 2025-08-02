@@ -34,13 +34,6 @@ I'm [Nathaniel Konu](https://www.linkedin.com/in/nkonu/), a cybersecurity profes
 
 Throughout my career, I've been driven by the mission to make compliance more efficient and accessible through automation and merging engineering principles with compliance. This grc suite represents my experiences and lessons learned in GRC.
 
-## What's Inside
-
-- **Hands-on Labs**: Comprehensive, step-by-step labs covering core security and GRC domains
-- **Full Code Implementations**: Complete CloudFormation templates for all labs
-- **Advanced Challenges**: Stretch goals and real-world scenarios to demonstrate advanced skills
-- **Learning Resources**: Curated references, comparison charts, and learning paths
-
 ## Repository Structure
 
 This repository is part of a progressive release strategy for my youtube channel  [RelevantGrc: Secure by design, Compliant by default](https://www.youtube.com/channel/UClRL3C3I8eWrlbISV1n1Bgg). Currently, it includes:
@@ -57,55 +50,10 @@ GRC_suite/
 ├── labs/ - Hands-on AWS, Azure security labs with full code and documentation
 │   └── lab-1-account-governance/ - AWS account security foundations
 │   └── lab-2-control_as_code/ - AWS account security foundations
-├── resources/ - AWS security services guide
-└── config/ - Configuration files for testing and development
+├── resources/ - Information security guide
+│   └── AWS security services guide
+└── Frameworks/ - files for framework
 ```
-## Labs Overview
-
-Currently available:
-
-1. **AWS Account Governance and Security Foundations** - Learn how to establish secure AWS account configurations, implement security baselines, and monitor account-level security posture.
-
-Each lab includes:
-- Clear learning objectives mapped to AWS Well-Architected Framework
-- Step-by-step implementation guides
-- Complete code in CloudFormation
-- Validation checklists and troubleshooting guides
-- Advanced challenges to extend your learning
-
-## Future Labs (Coming monthly)
-
-Each new lab and video will introduce additional GRC and security domains, covering:
-
-- **Compliance Framework**: Implementation of frameworks that provides structured approacj to achieving and maintaining compliance with applicable regulatory, and security requirements.
-- **Identity and Access Management (IAM)**: Implementation of least privilege access controls
-- **Security Automation with Infrastructure as Code**: Implementing security guardrails through IaC
-- **Security Monitoring and Incident Response**: Setting up effective monitoring systems
-- **Compliance Automation**: Streamlining regulatory compliance
-- **Data Security and Protection**: Ensuring data confidentiality and integrity
-- **Risk Assessment and Threat Modeling**: Methodologies for AWS environments
-- **Infrastructure and Network Protection**: Securing AWS networking components
-- **Incident Response and Recovery**: Creating effective incident handling procedures
-- **Policy as Code**: Implementation of scalable policy management via CI/CD
-- **Advanced Capstone Projects**: End-to-end implementations that combine concepts from multiple domains
-
-## Resources
-
-### AWS Security Services Guide
-- Comprehensive service guides
-- Implementation best practices
-- Integration examples
-- Cost optimization strategies
-- Service comparison matrix
-- Code examples for monitoring and security
-
-
-## How to Contribute
-
-We welcome contributions from the community! Whether you're fixing a typo, enhancing a lab, or contributing a completely new challenge, your help is appreciated.
-
-See our [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -119,5 +67,3 @@ This project is inspired by the need for practical, hands-on resources for GRC p
 If you have questions or feedback, please open an issue in this repository.
 
 ---
-
-<p align="center">Created for the GRC community</p>
