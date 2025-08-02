@@ -40,11 +40,6 @@ This repository is part of a progressive release strategy for my youtube channel
 
 ```
 GRC_suite/
-├── README.md - You are here!
-├── Compliance/ - Guidelines for contributors
-│    └── core documents
-│    └── map controls
-│    └── measure performance
 ├── LICENSE - Project license
 ├── portfolio/ - My GRC portfolio
 ├── labs/ - Hands-on AWS, Azure security labs with full code and documentation
@@ -53,6 +48,30 @@ GRC_suite/
 ├── resources/ - Information security guide
 │   └── AWS security services guide
 └── Frameworks/ - files for framework
+├── policies/
+│   ├── information-security-policy.md
+│   ├── access-control-policy.md
+│   └── ... 
+├── procedures/
+│   ├── risk-management-procedure.md
+│   ├── incident-response-procedure.md
+│   └── ...
+├── controls/
+│   ├── iso27001-control-matrix.xlsx
+│   ├── nist800-53-control-mapping.xlsx
+│   └── ...
+├── metrics/
+│   ├── isms-kpis-metrics.xlsx
+│   └── awareness-training-metrics.xlsx
+├── templates/
+│   ├── risk-assessment-template.docx
+│   ├── data-processing-agreement-template.docx
+│   └── ...
+├── audits/
+│   ├── internal-audit-plan.md
+│   └── findings-summary-template.docx
+└── README.md
+
 ```
 ## License
 
