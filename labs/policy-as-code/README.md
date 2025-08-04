@@ -1,5 +1,10 @@
-This repository currently includes:
+## What is Policy-as-code (PaC)
+Policy as Code is a rule that expresses your security, compliance, or operational policies into a machine-readable format (like YAML, Rego, JSON) and are stored in version control, evaluated automatically within pipelinesor platforms.
 
+
+## Repository Structure
+This repository currently includes:
+```
 /policy-as-code
   ├── README.md
   ├── policies/
@@ -10,3 +15,4 @@ This repository currently includes:
   ├── .github/
   │   └── workflows/
   │       └── policy-check.yml
+```
