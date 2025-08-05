@@ -31,3 +31,18 @@ compliance-repo/
 │   └── soc2-mapping.md
 ├── README.md               # This file
 
+```
+
+## Policy-as-Code Example
+
+The policies/ directory contains YAML policies that enforce:
+- Merge Request approval rules
+- Blocking merges on high/critical vulnerabilities
+- Secret detection enforcement
+
+## Compliance Framework Mappings
+
+See the mappings/ folder for how each control maps to industry frameworks like:
+- ISO/IEC 27001:2022
+- NIST SP 800-53 Rev 5
+- SOC 2
