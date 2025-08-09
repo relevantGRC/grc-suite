@@ -96,6 +96,7 @@ This project is inspired by the need for practical, hands-on resources for GRC p
 
 ## Contact
 
-If you have questions or feedback, please open an issue in this repository.
+For Questions, ideas, or feedback?
+Open an Issue or connect with me via RelevantGRC on YouTube..
 
 ---
