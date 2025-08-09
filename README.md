@@ -1,7 +1,5 @@
 # grc-suite
-A collection of tools, templates and scripts to support GRC functions across security, privacy and audit domains. 
-
-  [![Test Suite](https://github.com/ajy0127/grc_portfolio/actions/workflows/test.yml/badge.svg)](https://github.com/ajy0127/grc_portfolio/actions/workflows/test.yml)
+**A curated collection of tools, templates, and scripts to support Governance, Risk, and Compliance (GRC) functions across security, privacy, and audit domains.**
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-In%20Development-yellow" alt="Status: In Development">
@@ -12,15 +10,30 @@ A collection of tools, templates and scripts to support GRC functions across sec
 
 ## Disclaimers
 
-1. This is a personal project and does not represent or reflect the views, opinions, or work of my current employer, Clario, or any previous employers.
+This is a **personal, independent project**.  
+It does **not** represent or reflect the views, opinions, or work of my current employer or any previous employers.
 
-2. The code, configurations, and resources in this repository are for **educational purposes only**. While they demonstrate security concepts, they should not be used directly in production environments without proper review, testing, and customization for your specific security and compliance requirements.
+The content provided here — including code, configurations, and documentation — is **for educational purposes only**.  
+While these resources demonstrate real-world security and compliance concepts, **they should not be deployed in production without**:
+- Independent review  
+- Appropriate security testing  
+- Customization for your project or organization’s specific requirements  
 
 ## Project Vision
 
+The **GRC Suite** is designed to **empower Governance, Risk, and Compliance professionals** with **technical, hands-on skills**.
+
+Too often, GRC knowledge remains theoretical. This project closes that gap by offering:
+- **Actionable labs** that bring frameworks to life
+- **Templates and mappings** that accelerate implementation
+- **Guided exercises** that align with industry best practices
+
 This GRC Suite is my initiative to empower Governance, Risk, and Compliance professionals with technical implementation skills. Drawing from my cybersecurity experience and deep expertise in GRC Engineering and Auditing, I've created this repository to bridge the gap between theoretical knowledge and hands-on expertise, comprehensive guidance, and a structured portfolio framework.
 
-My mission is to create the industry's premier open-source resource for GRC professionals to demonstrate practical GRC skills through guided, hands-on experiences that directly align with best practices.
+**Mission:** is to build the industry's **go-to open-source resource** for GRC practitioners who want to:
+1. Demonstrate practical technical skills  
+2. Learn by doing — not just reading  
+3. Showcase their capabilities through a structured portfolio  
 
 ## About the Author
 
@@ -32,7 +45,7 @@ I'm [Nathaniel Konu](https://www.linkedin.com/in/nkonu/), a cybersecurity profes
 - **YouTube Learning**: Teach courses on GRC, cloud compliance and automation on my Youtube channel including GRC courses. 
 - **Current Role**: Senior GRC Engineering at Clario
 
-Throughout my career, I've been driven by the mission to make compliance more efficient and accessible through automation and merging engineering principles with compliance. This grc suite represents my experiences and lessons learned in GRC.
+**Core Belief:** Compliance should be **efficient**, **accessible**, and **integrated** — blending engineering principles with GRC frameworks to enable "secure by design, compliant by default."
 
 ## Repository Structure
 
