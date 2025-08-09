@@ -1,49 +1,43 @@
-# AWS Security Labs for GRC Professionals
+# GRC Labs for Professionals
 
-This directory contains hands-on labs designed to help GRC professionals build and demonstrate practical AWS security implementation skills. Each lab covers a specific domain aligned with the AWS Well-Architected Framework Security Pillar.
+**An open-source collection of policies, templates, scripts, and hands-on labs to implement Governance, Risk, and Compliance (GRC) in cloud and DevOps environments — featuring AWS and GitLab modules.**
 
-## Available Labs
+[![AWS](https://img.shields.io/badge/cloud-AWS-orange)]()
+[![GitLab](https://img.shields.io/badge/platform-GitLab-orange)]()
+[![Compliance Toolkit](https://img.shields.io/badge/focus-GRC-blue)]()
 
-1. [**Lab 1: AWS Account Governance**](lab-1-account-governance/) - Implement foundational security controls for AWS accounts
+This Labs are built for **GRC professionals**, **security engineers**, and **DevSecOps teams** who want to:
 
-## Lab Structure
+- Implement **compliance controls** in **Cloud**
+- Automate **security checks** and **evidence gathering**
+- Learn through **guided, hands-on labs**
+- Map technical controls to compliance frameworks including:
+  - **ISO 27001**
+  - **NIST 800-53**
+  - **SOC 2**
+  - **CIS Benchmarks**
+  - **etc**
+---
 
-Each lab follows a consistent structure:
+## Repository Structure
 
-- **README.md** - Overview and objectives
-- **step-by-step-guide.md** - Detailed implementation instructions
-- **validation-checklist.md** - How to verify your implementation
-- **challenges.md** - Additional tasks to extend your learning
-- **code/** - Implementation code in CloudFormation and scripts
-
-## Prerequisites
-
-Before starting any lab, ensure you have:
-
-1. An AWS account (most labs can use the AWS Free Tier)
-2. AWS CLI installed and configured
-3. Basic familiarity with AWS services
-4. Git installed to clone this repository
-
-## Cost Considerations
-
-Each lab includes estimated costs for the AWS resources deployed. Most labs are designed to use AWS Free Tier resources where possible, but some advanced labs may incur charges if resources are left running. Always follow the cleanup instructions at the end of each lab to avoid unexpected charges.
-
-## Learning Path
-
-For those new to AWS security, we recommend starting with Lab 1 to establish account security foundations. Additional labs will be released in the future.
-
-## Getting Help
-
-If you encounter issues with any lab:
-
-1. Check the troubleshooting section included in each lab
-2. Review the AWS documentation for the relevant services
-3. Open an issue in this repository with details of your problem
-4. Join our community discussions for peer support
-
-## Contributing
-
-We welcome improvements to existing labs and contributions of new labs. See our [CONTRIBUTING.md](../CONTRIBUTING.md) file for guidelines.
-
-Happy learning and building! 
+```plaintext
+Labs/
+├── AWS/      # AWS labs
+│   ├── lab-1-account governance/
+│   ├── lab-2-Security control as code/
+│   ├── lab-3-IAM/
+│   └── README.md
+├── gitlab/      # GitLab compliance projects, pipelines, templates
+│   ├── lab-1-compliance-project-setup/
+│   ├── lab-2-policy-as-code/
+│   ├── lab-3-control-mapping-in-gitlab/
+│   ├── lab-4-audit-evidence-extraction/
+│   └── templates/
+├── compliance-toolkit/            # Common policies, mappings, and templates
+│   ├── policies/
+│   ├── procedures/
+│   ├── control-mappings/
+│   ├── metrics/
+│   └── templates/
+└── README.md
