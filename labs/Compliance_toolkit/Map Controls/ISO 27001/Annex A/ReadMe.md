@@ -12,3 +12,10 @@ Each control has a layout that will always contain a title, a description of the
 
 # Categories, Themes, and Attributes 
 Controls have one of four categories, referred to as 'Themes'. These themes are:
+
+| Domain | Coverage |
+|------|--------|
+| People | Controls concerning people |
+| Physical | Controls concerning physical |
+| Technology | Controls concerning technology |
+| Organizational|  |
