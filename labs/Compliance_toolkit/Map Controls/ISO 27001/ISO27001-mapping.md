@@ -16,3 +16,22 @@ Adopt an overarching management process (system) to ensure that the information 
 - Clause 8 Operation
 - Clause 9 Performance and Evaluation
 - Clause 10 Improvement
+
+## Implementation
+```mermaid
+graph TD
+    A[Start] --> B[Get management support]
+    A --> C[inventory information assets or risks]
+    A --> D[Information Risk Assessment]
+    B --> E[Business case]
+    C --> F[Scope]
+    C --> G[Inventory]
+    G --> D[Information Risk Assessment]
+    D --> H[Prepare Statement of Applicability]
+    D --> I[Prepare Risk treatment plan]
+    H --> J[SOA]
+    I --> K[Risk Treatment Plan]
+    I --> H
+    H --> I
+
+```
