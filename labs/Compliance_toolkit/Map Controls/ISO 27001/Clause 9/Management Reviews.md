@@ -9,35 +9,35 @@ An internal management review is simply a formalised, structured meeting where y
 
 This is all about comparing efforts taken so far with the ideal objectives of the ISMS;
 
-Suitability: The ISMS aligns with your organisation's context and objectives
-Adequacy: The design meets your organisation's needs
-Effectiveness: The ISMS delivers intended results
+- Suitability: The ISMS aligns with your organisation's context and objectives
+- Adequacy: The design meets your organisation's needs
+- Effectiveness: The ISMS delivers intended results
 
 ## Why Management Reviews Matter 
 Management reviews serve several critical purposes:
 
-Demonstrating Leadership Commitment: Management reviews show top management's commitment to information security. Auditors scrutinize leadership involvement in the ISMS during certification.
-Continuous Improvement: The standard requires continuous improvement of your ISMS. The review process identifies improvement opportunities systematically (and evidences that such a mechanism exists).
-Audit Preparation: Regular reviews help identify gaps and address non-conformities before external audits occur. The process itself is valuable when appropriately used.
-Strategic Alignment: Regular reviews ensure information security efforts remain aligned with evolving business objectives.
-Balancing Implementation with Maintenance: Management reviews bridge the gap between initial ISMS design and ongoing maintenance. This can feel weird during first implementation, as you're simultaneously building systems while reviewing their effectiveness. This feeling of friction is normal and part of the continuous improvement cycle central to ISO 27001. It's worth remembering that the standard is written for users who already have an ISMS in place, so you'll occasionally come to sections or processes as an implementor where the standard doesn't quite feel like it's useful - these are the sections that it's vital to bake into processes for next year.
+- Demonstrating Leadership Commitment: Management reviews show top management's commitment to information security. Auditors scrutinize leadership involvement in the ISMS during certification.
+- Continuous Improvement: The standard requires continuous improvement of your ISMS. The review process identifies improvement opportunities systematically (and evidences that such a mechanism exists).
+- Audit Preparation: Regular reviews help identify gaps and address non-conformities before external audits occur. The process itself is valuable when appropriately used.
+- Strategic Alignment: Regular reviews ensure information security efforts remain aligned with evolving business objectives.
+- Balancing Implementation with Maintenance: Management reviews bridge the gap between initial ISMS design and ongoing maintenance. This can feel weird during first implementation, as you're simultaneously building systems while reviewing their effectiveness. This feeling of friction is normal and part of the continuous improvement cycle central to ISO 27001. It's worth remembering that the standard is written for users who already have an ISMS in place, so you'll occasionally come to sections or processes as an implementor where the standard doesn't quite feel like it's useful - these are the sections that it's vital to bake into processes for next year.
 
 ## When to Conduct Management Reviews 
 The timing of management reviews must be carefully planned:
 
-The standard requires reviews at "planned intervals" - but doesn't prescribe a frequency. The de-facto is 'annually', but make sure this is a decision you make based on your own interests and goals. Think about other key validations and reviews that ought to happen yearly, and think about whether the review should be placed before or after these if controls, subscriptions, processes or staffing is likely to change.
-Before a Stage 1 Audit: You must provide evidence during a Stage 1 audit that regular reviews are conducted. In the UK, it is in preparation for a stage 1 audit that newcomers first identify that they will need to produce and execute a plan for an Internal Audit. Conduct at least one review before your initial certification audit.
-After Significant Changes: Schedule additional reviews after major organisational changes, security incidents, or when new threats emerge. This should be a process that can be rolled out as a follow-on to your incident response plan or business continuity plan.
-During Implementation: For organisations implementing ISO 27001, conduct more frequent reviews to establish effective monitoring patterns. This is where it can become very useful to try and bake information security into a standing business item. The Management review is a very important part of the feedback loop of any ISMS, and is a leverage point for making key changes.
+- The standard requires reviews at "planned intervals" - but doesn't prescribe a frequency. The de-facto is 'annually', but make sure this is a decision you make based on your own interests and goals. Think about other key validations and reviews that ought to happen yearly, and think about whether the review should be placed before or after these if controls, subscriptions, processes or staffing is likely to change.
+- Before a Stage 1 Audit: You must provide evidence during a Stage 1 audit that regular reviews are conducted. In the UK, it is in preparation for a stage 1 audit that newcomers first identify that they will need to produce and execute a plan for an Internal Audit. Conduct at least one review before your initial certification audit.
+- After Significant Changes: Schedule additional reviews after major organisational changes, security incidents, or when new threats emerge. This should be a process that can be rolled out as a follow-on to your incident response plan or business continuity plan.
+- During Implementation: For organisations implementing ISO 27001, conduct more frequent reviews to establish effective monitoring patterns. This is where it can become very useful to try and bake information security into a standing business item. The Management review is a very important part of the feedback loop of any ISMS, and is a leverage point for making key changes.
 
 ## Who Should Attend 
 The 'management' review suggests specific participants:
 
-Top Management: Senior management must lead the review. ISO 27001 explicitly requires top management involvement.
-Information Security Manager: The person responsible for daily ISMS operations provides operational insights.
-Department Representatives: Include key department heads to ensure comprehensive coverage of all business units.
-Risk Owners: Include people identified as risk owners in your risk assessment to address risk treatment effectiveness.
-Internal Auditors or consultants: Optional but valuable for providing independent assessment perspectives. This is not necessarily about compliance - have third-party standard expertise can provide useful insights into the design of the standard to ease friction points or clear up disagreements without organisational buy-in.
+- Top Management: Senior management must lead the review. ISO 27001 explicitly requires top management involvement.
+- Information Security Manager: The person responsible for daily ISMS operations provides operational insights.
+- Department Representatives: Include key department heads to ensure comprehensive coverage of all business units.
+- Risk Owners: Include people identified as risk owners in your risk assessment to address risk treatment effectiveness.
+- Internal Auditors or consultants: Optional but valuable for providing independent assessment perspectives. This is not necessarily about compliance - have third-party standard expertise can provide useful insights into the design of the standard to ease friction points or clear up disagreements without organisational buy-in.
 
 ## Essential Agenda Items 
 Your management review must address specific topics defined in ISO 27001 clause 9.3.2:
@@ -60,7 +60,10 @@ Your management review must address specific topics defined in ISO 27001 clause 
   - Backups and recovery systems
   - Monitoring systems
 - Resource Needs: Determine if the ISMS has adequate resources (human, technical, financial) as required in clause 7.1.
-This is easy enough to cover as a conversation with effective note taking, but will require effective preparation if it is to be completed in a timely manner. Consider delegation for the collection and preparation of this information. For smaller teams, consider a preliminary meeting that outlines what data needs to be collected and gives reasonable timeframes to collect it and make it presentable. Consider also that this data should already be available in a timely fashion as a component of the monitoring function of the ISMS, so if you find any frustrations in collecting this data, take that as an opportunity for continuous improvement, and find a way to get your hands on it more easily.
+
+
+
+ This is easy enough to cover as a conversation with effective note taking, but will require effective preparation if it is to be completed in a timely manner. Consider delegation for the collection and preparation of this information. For smaller teams, consider a preliminary meeting that outlines what data needs to be collected and gives reasonable timeframes to collect it and make it presentable. Consider also that this data should already be available in a timely fashion as a component of the monitoring function of the ISMS, so if you find any frustrations in collecting this data, take that as an opportunity for continuous improvement, and find a way to get your hands on it more easily.
 
 ## Common Pitfalls to Avoid 
 Several common mistakes undermine effective management reviews:
