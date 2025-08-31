@@ -8,7 +8,12 @@ Top management can delegate responsibilities to meet their actions, but they can
 
 ## Policy (5.2) 
 
-Establish policy > Commit to it > Communicate it
+```mermaid
+
+  graph LR
+  A[Establish policy] --> B[Commit to it]
+  B --> C[Communicate it]
+```
 
 Top management need to establish an IS policy. It has to be relevant to the purpose of the organisation (5.2a) so that rules out SANs Templates and other 'YOUR COMPANY NAME HERE' policy packs. It also needs to either provide a framework for setting IS objectives, or the security objectives themselves (5.2b).
 
