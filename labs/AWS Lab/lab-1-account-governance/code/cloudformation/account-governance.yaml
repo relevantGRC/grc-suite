@@ -1,0 +1,59 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'AWS Account Governance - Basic AWS Config Rules for Lab 1'
+
+Resources:
+  #########################################################
+  # Config Rules
+  #########################################################
+  ConfigRuleIAMPasswordPolicy:
+    Type: 'AWS::Config::ConfigRule'
+    Properties:
+      ConfigRuleName: iam-password-policy
+      Description: Checks whether the account password policy for IAM users meets the specified requirements
+      Source:
+        Owner: AWS
+        SourceIdentifier: IAM_PASSWORD_POLICY
+
+  ConfigRuleRootMFA:
+    Type: 'AWS::Config::ConfigRule'
+    Properties:
+      ConfigRuleName: root-account-mfa-enabled
+      Description: Checks whether the root user of your AWS account requires multi-factor authentication for console sign-in
+      Source:
+        Owner: AWS
+        SourceIdentifier: ROOT_ACCOUNT_MFA_ENABLED
+
+  ConfigRuleIAMUserMFA:
+    Type: 'AWS::Config::ConfigRule'
+    Properties:
+      ConfigRuleName: mfa-enabled-for-iam-console-access
+      Description: Checks whether AWS Multi-Factor Authentication (MFA) is enabled for all AWS IAM users that use a console password
+      Source:
+        Owner: AWS
+        SourceIdentifier: MFA_ENABLED_FOR_IAM_CONSOLE_ACCESS
+
+  ConfigRuleCloudTrailEnabled:
+    Type: 'AWS::Config::ConfigRule'
+    Properties:
+      ConfigRuleName: cloudtrail-enabled
+      Description: Checks whether AWS CloudTrail is enabled in your AWS account
+      Source:
+        Owner: AWS
+        SourceIdentifier: CLOUD_TRAIL_ENABLED
+
+  ConfigRuleS3PublicWrite:
+    Type: 'AWS::Config::ConfigRule'
+    Properties:
+      ConfigRuleName: s3-bucket-public-write-prohibited
+      Description: Checks that your Amazon S3 buckets do not allow public write access
+      Scope:
+        ComplianceResourceTypes:
+          - AWS::S3::Bucket
+      Source:
+        Owner: AWS
+        SourceIdentifier: S3_BUCKET_PUBLIC_WRITE_PROHIBITED
+
+Outputs:
+  ConfigRulesDeployed:
+    Description: AWS Config Rules successfully deployed
+    Value: "Successfully deployed 5 AWS Config Rules for security compliance"
