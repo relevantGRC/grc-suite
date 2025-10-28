@@ -1,0 +1,170 @@
+# Baseline Security Controls - Example CloudFormation Template
+#
+# This template demonstrates several foundational security controls for AWS environments.
+# Each section is annotated to explain how it ties to the security controls described in the lab guide and README.
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Baseline Security Controls - Example CloudFormation Template
+
+# --- PARAMETERS ---
+# Resource tags for ownership and environment
+Parameters:
+  Environment:
+    Type: String
+    Default: dev
+    Description: Deployment environment
+
+# --- RESOURCES ---
+Resources:
+  # NETWORK SEGMENTATION: VPC
+  # This VPC segments your cloud resources, supporting network isolation and layered security.
+  BaselineVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      Tags:
+        - Key: Name
+          Value: baseline-vpc
+        - Key: Environment
+          Value: !Ref Environment
+
+  # NETWORK SEGMENTATION & LEAST PRIVILEGE: Security Group
+  # This security group restricts inbound SSH (22/tcp) and allows all outbound traffic (for demo only).
+  # In production, restrict ingress/egress as tightly as possible.
+  # Principle of least privilege: Only port 22 is open for inbound, and can be further restricted.
+  BaselineSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Baseline security group
+      VpcId: !Ref BaselineVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0 # For demo, restrict in production
+      SecurityGroupEgress:
+        - IpProtocol: -1
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: baseline-sg
+        - Key: Environment
+          Value: !Ref Environment
+
+  # LOGGING ENABLED: VPC Flow Logs
+  # This resource enables VPC Flow Logs, capturing network traffic data for monitoring and auditing.
+  # Logging enabled for all critical resources: You should also enable CloudTrail, S3 access logs, etc.
+  FlowLogsRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: FlowLogsPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: '*'
+
+  FlowLogs:
+    Type: AWS::EC2::FlowLog
+    Properties:
+      DeliverLogsPermissionArn: !GetAtt FlowLogsRole.Arn
+      LogGroupName: !Sub /aws/vpc/flowlogs/${BaselineVPC}
+      ResourceId: !Ref BaselineVPC
+      ResourceType: VPC
+      TrafficType: ALL
+
+  # SECURE STORAGE: S3 Bucket with encryption and public access block
+  SecureS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: Name
+          Value: secure-bucket
+        - Key: Environment
+          Value: !Ref Environment
+
+  # S3 BUCKET POLICY: Allow CloudTrail to write logs
+  SecureS3BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref SecureS3Bucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: AWSCloudTrailWrite
+            Effect: Allow
+            Principal:
+              Service: cloudtrail.amazonaws.com
+            Action: s3:PutObject
+            Resource: !Sub "arn:aws:s3:::${SecureS3Bucket}/AWSLogs/${AWS::AccountId}/*"
+            Condition:
+              StringEquals:
+                "s3:x-amz-acl": "bucket-owner-full-control"
+          - Sid: AllowSSLRequestsOnly
+            Effect: Deny
+            Principal: "*"
+            Action: "s3:*"
+            Resource: !Sub "arn:aws:s3:::${SecureS3Bucket}/*"
+            Condition:
+              Bool:
+                "aws:SecureTransport": false
+
+  # IAM ROLE: Example read-only role for S3
+  ExampleReadOnlyRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: ReadOnlyS3
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:Get*
+                  - s3:List*
+                Resource: "*"
+
+  # (CloudTrail resources removed per user request)
+
+# --- OUTPUTS ---
+# Outputs provide resource IDs for validation and testing.
+Outputs:
+  VPCId:
+    Description: VPC ID
+    Value: !Ref BaselineVPC
+  SecurityGroupId:
+    Description: Security Group ID
+    Value: !Ref BaselineSecurityGroup
+  S3BucketName:
+    Description: Secure S3 Bucket Name
+    Value: !Ref SecureS3Bucket
+  ExampleReadOnlyRoleArn:
+    Description: Example ReadOnly Role ARN
+    Value: !GetAtt ExampleReadOnlyRole.Arn
