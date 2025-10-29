@@ -1,0 +1,16 @@
+application:
+  name: example-tenant
+  env: prod
+  version: 1.4.2
+  features:
+    remember_me: true           # UX thing; not a security control
+    multi_region: [us-east1, eu-west1]
+  logging:
+    level: info
+    redact_fields: [password, token]
+  settings:
+    session_timeout: "never"    # never is not valid
+    idle_lock_enabled: false    # idle lock is NOT a substitute for termination
+    max_concurrent_sessions: 5
+    cookie_secure: true
+    cookie_http_only: true
