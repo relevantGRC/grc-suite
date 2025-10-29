@@ -1,0 +1,8 @@
+{
+  "application": {
+    "name": "example-tenant",
+    "settings": {
+      "session_timeout": 7200
+    }
+  }
+}
