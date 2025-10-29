@@ -1,0 +1,17 @@
+{
+  "resource": {
+    "aws_iam_policy": {
+      "bad_policy": {
+        "policy": {
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": "*",
+              "Resource": "*"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
