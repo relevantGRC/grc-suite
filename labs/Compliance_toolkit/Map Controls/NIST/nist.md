@@ -1,3 +1,7 @@
+# Control Mapping Labs
+
+This folder contains hands-on labs focused on mapping NIST 800-53 and NIST CSF controls to real-world tools, workflows, and DevSecOps pipelines.
+
 # NIST 800-53 Rev 5 Control Mapping
 
 | Control | GitLab Feature | Template |
