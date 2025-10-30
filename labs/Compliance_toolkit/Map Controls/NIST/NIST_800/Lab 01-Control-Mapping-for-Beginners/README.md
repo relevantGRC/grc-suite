@@ -156,4 +156,4 @@ You now know:
 
 ---
 
-Created by [Ashley Pearce](https://www.linkedin.com/in/ashley-thornhill)
+Created by [](https://www.linkedin.com/in/nkonu)
