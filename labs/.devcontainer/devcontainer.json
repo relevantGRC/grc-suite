@@ -1,0 +1,9 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    // Add any additional features your project needs
+  },
+  "postCreateCommand": "echo 'Container ready.'"
+}
