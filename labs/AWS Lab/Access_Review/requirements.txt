@@ -1,0 +1,15 @@
+# Runtime dependencies
+boto3>=1.28.0
+
+# Testing dependencies
+pytest>=7.3.1
+pytest-mock>=3.10.0
+pytest-cov>=4.0.0
+pytest-timeout>=2.0.0
+moto>=4.1.12
+
+# Code quality
+flake8>=6.0.0
+black>=23.1.0
+cfn-lint>=0.79.5
+coverage>=7.2.7
