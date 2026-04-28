@@ -4,14 +4,14 @@ A Python tool that aggregates findings from multiple AWS audit checks (S3, IAM, 
 
 ## Compliance Controls Addressed
 
-| NIST 800-53 Rev 5 | FedRAMP High | CJIS v6.0 | Validation Method |
-|--------------------|:------------:|:---------:|-------------------|
-| CA-2 Control Assessments | Yes | — | The HTML report is the control-assessment artifact |
-| CA-7 Continuous Monitoring | Yes | Continuous monitoring expected | Regular generation supports ongoing control assessment |
-| AU-3 Content of Audit Records | Yes | — | Report includes timestamp, account, findings, severity, status |
-| AU-12 Audit Record Generation | Yes | — | Every report run produces a structured, dated artifact |
-| PM-31 Continuous Monitoring Strategy | Yes | — | Report integrates with the broader monitoring approach |
-| SI-4 System Monitoring | Yes | — | Aggregates monitoring findings into a single review surface |
+| ISO 27001 | NIST 800-53 Rev 5 | SOC 2 | CJIS v6.0 | Validation Method |
+|--------------------:|--------------------|:------------:|:---------:|-------------------|
+|f | CA-2 Control Assessments | Yes | — | The HTML report is the control-assessment artifact |
+|f | CA-7 Continuous Monitoring | Yes | Continuous monitoring expected | Regular generation supports ongoing control assessment |
+| f| AU-3 Content of Audit Records | Yes | — | Report includes timestamp, account, findings, severity, status |
+|f | AU-12 Audit Record Generation | Yes | — | Every report run produces a structured, dated artifact |
+|f | PM-31 Continuous Monitoring Strategy | Yes | — | Report integrates with the broader monitoring approach |
+| f| SI-4 System Monitoring | Yes | — | Aggregates monitoring findings into a single review surface |
 
 ## Overview
 
@@ -135,6 +135,3 @@ CJIS v6.0 (audit standard from April 1, 2026) requires continuous monitoring and
 
 Control family mappings and AWS implementation details are documented in [nist-800-53-rev-5-to-aws-mapping](https://github.com/0xBahalaNa/nist-800-53-rev-5-to-aws-mapping).
 
-## License
-
-MIT
