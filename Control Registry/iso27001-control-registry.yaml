@@ -1,0 +1,452 @@
+standard: ISO/IEC 27001:2022
+registry_version: "1.0"
+
+controls:
+
+  # =========================
+  # A.5 Organizational Controls
+  # =========================
+  A.5.1:
+    name: Policies for information security
+    domain: organizational
+    enforcement: manual
+    policy_as_code: false
+    automation_level: none
+    evidence: policy_documents
+
+  A.5.2:
+    name: Information security roles
+    domain: organizational
+    enforcement: manual
+    policy_as_code: false
+
+  A.5.3:
+    name: Segregation of duties
+    domain: organizational
+    enforcement: semi_automated
+    policy_as_code: true
+    policy_files:
+      - iam.rego
+
+  A.5.4:
+    name: Management responsibilities
+    enforcement: manual
+    policy_as_code: false
+
+  A.5.5:
+    name: Contact with authorities
+    enforcement: manual
+
+  A.5.6:
+    name: Contact with special interest groups
+    enforcement: manual
+
+  A.5.7:
+    name: Threat intelligence
+    enforcement: semi_automated
+    policy_as_code: false
+    evidence: threat_feeds
+
+  A.5.8:
+    name: Information security in project management
+    enforcement: manual
+
+  A.5.9:
+    name: Inventory of information and assets
+    enforcement: semi_automated
+    policy_as_code: true
+    policy_files:
+      - asset_inventory.rego
+
+  A.5.10:
+    name: Acceptable use
+    enforcement: manual
+
+  A.5.11:
+    name: Return of assets
+    enforcement: manual
+
+  A.5.12:
+    name: Classification of information
+    enforcement: manual
+
+  A.5.13:
+    name: Labelling of information
+    enforcement: semi_automated
+    policy_as_code: true
+
+  A.5.14:
+    name: Information transfer
+    enforcement: semi_automated
+    policy_as_code: true
+    policy_files:
+      - encryption.rego
+
+  A.5.15:
+    name: Access control
+    enforcement: automated
+    policy_as_code: true
+    policy_files:
+      - iam.rego
+      - least_privilege.rego
+
+  A.5.16:
+    name: Identity management
+    enforcement: automated
+    policy_as_code: true
+
+  A.5.17:
+    name: Authentication information
+    enforcement: automated
+    policy_as_code: true
+
+  A.5.18:
+    name: Access rights management
+    enforcement: automated
+    policy_as_code: true
+
+  A.5.19:
+    name: Supplier relationships security
+    enforcement: manual
+
+  A.5.20:
+    name: Supplier agreements
+    enforcement: manual
+
+  A.5.21:
+    name: ICT supply chain security
+    enforcement: semi_automated
+
+  A.5.22:
+    name: Supplier service monitoring
+    enforcement: semi_automated
+
+  A.5.23:
+    name: Cloud services security
+    enforcement: automated
+    policy_as_code: true
+    policy_files:
+      - cloud_baseline.rego
+
+  A.5.24:
+    name: Incident management planning
+    enforcement: manual
+
+  A.5.25:
+    name: Incident assessment
+    enforcement: semi_automated
+
+  A.5.26:
+    name: Incident response
+    enforcement: semi_automated
+
+  A.5.27:
+    name: Learning from incidents
+    enforcement: manual
+
+  A.5.28:
+    name: Evidence collection
+    enforcement: manual
+
+  A.5.29:
+    name: Information security during disruption
+    enforcement: manual
+
+  A.5.30:
+    name: ICT readiness for business continuity
+    enforcement: semi_automated
+
+  A.5.31:
+    name: Legal compliance requirements
+    enforcement: manual
+
+  A.5.32:
+    name: Intellectual property rights
+    enforcement: manual
+
+  A.5.33:
+    name: Protection of records
+    enforcement: semi_automated
+
+  A.5.34:
+    name: Privacy and personal data protection
+    enforcement: semi_automated
+    policy_as_code: true
+
+  A.5.35:
+    name: Independent review
+    enforcement: manual
+
+  A.5.36:
+    name: Compliance with policies
+    enforcement: semi_automated
+
+  A.5.37:
+    name: Documented operating procedures
+    enforcement: manual
+
+  # =========================
+  # A.6 People Controls
+  # =========================
+  A.6.1:
+    name: Screening
+    enforcement: manual
+
+  A.6.2:
+    name: Terms of employment
+    enforcement: manual
+
+  A.6.3:
+    name: Security awareness training
+    enforcement: semi_automated
+
+  A.6.4:
+    name: Disciplinary process
+    enforcement: manual
+
+  A.6.5:
+    name: Termination responsibilities
+    enforcement: manual
+
+  A.6.6:
+    name: Confidentiality agreements
+    enforcement: manual
+
+  A.6.7:
+    name: Remote working
+    enforcement: semi_automated
+    policy_as_code: true
+
+  A.6.8:
+    name: Security event reporting
+    enforcement: semi_automated
+
+  # =========================
+  # A.7 Physical Controls
+  # =========================
+  A.7.1:
+    name: Physical security perimeters
+    enforcement: manual
+
+  A.7.2:
+    name: Physical entry controls
+    enforcement: semi_automated
+
+  A.7.3:
+    name: Office security
+    enforcement: manual
+
+  A.7.4:
+    name: Physical monitoring
+    enforcement: semi_automated
+
+  A.7.5:
+    name: Environmental threat protection
+    enforcement: manual
+
+  A.7.6:
+    name: Secure areas
+    enforcement: manual
+
+  A.7.7:
+    name: Clear desk and screen
+    enforcement: manual
+
+  A.7.8:
+    name: Equipment siting protection
+    enforcement: manual
+
+  A.7.9:
+    name: Off-premises assets
+    enforcement: semi_automated
+
+  A.7.10:
+    name: Storage media
+    enforcement: manual
+
+  A.7.11:
+    name: Supporting utilities
+    enforcement: manual
+
+  A.7.12:
+    name: Cabling security
+    enforcement: manual
+
+  A.7.13:
+    name: Equipment maintenance
+    enforcement: manual
+
+  A.7.14:
+    name: Secure disposal or reuse
+    enforcement: manual
+
+  # =========================
+  # A.8 Technological Controls
+  # =========================
+  A.8.1:
+    name: Endpoint devices
+    enforcement: semi_automated
+    policy_as_code: true
+
+  A.8.2:
+    name: Privileged access management
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.3:
+    name: Information access restriction
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.4:
+    name: Source code access
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.5:
+    name: Secure authentication
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.6:
+    name: Capacity management
+    enforcement: semi_automated
+
+  A.8.7:
+    name: Malware protection
+    enforcement: semi_automated
+
+  A.8.8:
+    name: Technical vulnerability management
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.9:
+    name: Configuration management
+    enforcement: automated
+    policy_as_code: true
+    policy_tools:
+      - checkov
+
+  A.8.10:
+    name: Information deletion
+    enforcement: semi_automated
+
+  A.8.11:
+    name: Data masking
+    enforcement: semi_automated
+
+  A.8.12:
+    name: Data leakage prevention
+    enforcement: semi_automated
+
+  A.8.13:
+    name: Backup
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.14:
+    name: Redundancy
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.15:
+    name: Logging
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.16:
+    name: Monitoring activities
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.17:
+    name: Clock synchronization
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.18:
+    name: Privileged utility programs
+    enforcement: automated
+
+  A.8.19:
+    name: Software installation controls
+    enforcement: automated
+
+  A.8.20:
+    name: Network security
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.21:
+    name: Network services security
+    enforcement: automated
+
+  A.8.22:
+    name: Network segregation
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.23:
+    name: Web filtering
+    enforcement: semi_automated
+
+  A.8.24:
+    name: Cryptography
+    enforcement: automated
+    policy_as_code: true
+    policy_tools:
+      - checkov
+
+  A.8.25:
+    name: Secure development lifecycle
+    enforcement: semi_automated
+
+  A.8.26:
+    name: Application security requirements
+    enforcement: semi_automated
+
+  A.8.27:
+    name: Secure system architecture
+    enforcement: semi_automated
+
+  A.8.28:
+    name: Secure coding
+    enforcement: semi_automated
+
+  A.8.29:
+    name: Security testing
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.30:
+    name: Outsourced development
+    enforcement: manual
+
+  A.8.31:
+    name: Separation of development/test/production
+    enforcement: automated
+    policy_as_code: true
+
+  A.8.32:
+    name: Change management
+    enforcement: semi_automated
+
+  A.8.33:
+    name: Test information
+    enforcement: semi_automated
+
+  A.8.34:
+    name: Protection of audit logging information
+    enforcement: automated
+    policy_as_code: true
+
+  # =========================
+  # Metrics:
+  # =========================
+   
+  total_controls: 93
+  automated: 38
+  semi_automated: 27
+  manual: 28
+  compliance_score: 82%
