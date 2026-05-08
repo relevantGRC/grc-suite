@@ -1,0 +1,11 @@
+# Audit output files — contain AWS account IDs, IAM usernames, and
+# compliance findings. Never commit these to a public portfolio repo.
+iam_audit_*.csv
+iam_audit_*.json
+
+# Python bytecode and caches
+__pycache__/
+*.pyc
+
+# Environment files (may contain AWS credentials or SNS ARNs)
+.env
