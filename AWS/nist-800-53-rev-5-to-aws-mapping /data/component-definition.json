@@ -1,0 +1,955 @@
+{
+  "component-definition": {
+    "uuid": "a1b2c3d4-5678-9abc-def0-123456789abc",
+    "metadata": {
+      "title": "NIST 800-53 Rev 5 to AWS Service Mapping",
+      "last-modified": "2026-03-22T00:00:00Z",
+      "version": "0.6.0",
+      "oscal-version": "1.1.2"
+    },
+    "components": [
+      {
+        "uuid": "b2c3d4e5-6789-abcd-ef01-23456789abcd",
+        "type": "service",
+        "title": "AWS CloudTrail",
+        "description": "AWS CloudTrail records API calls and account activity across AWS infrastructure, providing event history for governance, compliance, and operational auditing.",
+        "control-implementations": [
+          {
+            "uuid": "c3d4e5f6-789a-bcde-f012-3456789abcde",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS CloudTrail",
+            "implemented-requirements": [
+              {
+                "uuid": "d4e5f6a7-89ab-cdef-0123-456789abcdef",
+                "control-id": "au-2",
+                "description": "CloudTrail enables audit event logging by capturing API calls across AWS services. Organizations configure trail settings to define which management and data events are logged, satisfying the requirement to identify events the system is capable of auditing.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "e5f6a7b8-9abc-def0-1234-56789abcdef0",
+                "control-id": "au-3",
+                "description": "CloudTrail log entries contain event name, timestamp, source IP, user identity (ARN), request parameters, and response elements. This satisfies the requirement for audit records containing what type of event occurred, when, where, the source, the outcome, and the identity of associated individuals or subjects.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "f6a7b8c9-abcd-ef01-2345-6789abcdef01",
+                "control-id": "au-12",
+                "description": "CloudTrail provides system-wide audit record generation capability. When configured as an organization trail via AWS Organizations, it generates audit records for all member accounts across all AWS regions, capturing both management events and data events. FedRAMP High requires multi-region coverage — a single-region trail does not satisfy this control.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "40a2b3c4-d5e6-7890-abcd-ef0123456740",
+                "control-id": "cm-3",
+                "description": "CloudTrail provides the audit trail component of configuration change control by recording who made each change, when, from which source IP, and what API action was called. Combined with AWS Config's before-and-after configuration snapshots, CloudTrail satisfies the requirement to document configuration change decisions and retain records of configuration-controlled changes.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "a7b8c9d0-bcde-f012-3456-789abcdef012",
+        "type": "service",
+        "title": "AWS IAM",
+        "description": "AWS Identity and Access Management (IAM) controls authentication and authorization for AWS resources, enabling centralized management of users, groups, roles, and policies.",
+        "control-implementations": [
+          {
+            "uuid": "b8c9d0e1-cdef-0123-4567-89abcdef0123",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS IAM",
+            "implemented-requirements": [
+              {
+                "uuid": "c9d0e1f2-def0-1234-5678-9abcdef01234",
+                "control-id": "ac-2",
+                "description": "IAM provides account management capabilities including creating, enabling, modifying, disabling, and removing accounts. IAM policies enforce conditions on account usage, and integration with AWS Organizations enables centralized account management across multiple AWS accounts.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  },
+                  {
+                    "name": "cjis-delta",
+                    "value": "CJIS v6.0 requires accounts with access to CJI be reviewed at minimum quarterly. This exceeds the FedRAMP High baseline review frequency and requires documented evidence of each review cycle with explicit reauthorization or removal of access."
+                  }
+                ]
+              },
+              {
+                "uuid": "d0e1f2a3-ef01-2345-6789-abcdef012340",
+                "control-id": "ac-3",
+                "description": "IAM enforces approved authorizations for logical access through a default-deny policy evaluation chain. Every API call is evaluated against identity-based policies, resource-based policies, permissions boundaries, and service control policies (SCPs). Access is denied unless an explicit allow exists and no explicit deny overrides it.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "d0e1f2a3-ef01-2345-6789-abcdef012345",
+                "control-id": "ac-6",
+                "description": "IAM enforces least privilege through identity-based policies, resource-based policies, permissions boundaries, and service control policies (SCPs). IAM Access Analyzer identifies resources shared with external entities and validates policies against least-privilege best practices.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "e1f2a3b4-f012-3456-789a-bcdef0123456",
+                "control-id": "ia-2",
+                "description": "IAM authenticates users through passwords, access keys, and MFA devices. IAM Identity Center provides centralized SSO with support for SAML 2.0 and OIDC federation, enabling multi-factor authentication for all organizational users accessing AWS resources.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  },
+                  {
+                    "name": "cjis-delta",
+                    "value": "CJIS v6.0 requires AAL2 multi-factor authentication for all users accessing CJI. This exceeds the FedRAMP High baseline by mandating phishing-resistant authenticators (hardware tokens or push-based MFA) and prohibiting SMS-based OTP as a second factor for CJI systems."
+                  }
+                ]
+              },
+              {
+                "uuid": "e1f2a3b4-f012-3456-789a-bcdef0123457",
+                "control-id": "ia-5",
+                "description": "IAM enforces authenticator management through configurable password policies (minimum length, complexity, rotation period, reuse prevention) and access key rotation tracking. IAM credential reports provide visibility into password and access key age across all users, supporting the requirement to manage system authenticator lifecycle.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "f2a3b4c5-0123-4567-89ab-cdef01234567",
+        "type": "service",
+        "title": "AWS Organizations",
+        "description": "AWS Organizations provides centralized governance and management of multiple AWS accounts, enabling policy-based controls through service control policies (SCPs) and consolidated account lifecycle management.",
+        "control-implementations": [
+          {
+            "uuid": "a3b4c5d6-1234-5678-9abc-def012345678",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS Organizations",
+            "implemented-requirements": [
+              {
+                "uuid": "b4c5d6e7-2345-6789-abcd-ef0123456789",
+                "control-id": "ac-2",
+                "description": "AWS Organizations enables centralized account management across multiple AWS accounts through organizational units (OUs) and SCPs. Accounts can be created, moved between OUs, suspended, and closed centrally, satisfying the requirement for organization-wide account management and enforcement of account usage conditions.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "c5d6e7f8-3456-789a-bcde-f01234567890",
+        "type": "service",
+        "title": "AWS IAM Identity Center",
+        "description": "AWS IAM Identity Center (successor to AWS SSO) provides centralized single sign-on access management across multiple AWS accounts and business applications, supporting SAML 2.0 and OIDC federation with external identity providers.",
+        "control-implementations": [
+          {
+            "uuid": "d6e7f8a9-4567-89ab-cdef-012345678901",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS IAM Identity Center",
+            "implemented-requirements": [
+              {
+                "uuid": "e7f8a9b0-5678-9abc-def0-123456789012",
+                "control-id": "ac-17",
+                "description": "IAM Identity Center controls remote access to AWS resources by authenticating users through a centralized portal with MFA enforcement before granting session credentials. Permission sets define what authenticated remote users can access, and session duration limits control how long remote access remains valid.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "f8a9b0c1-6789-abcd-ef01-234567890123",
+                "control-id": "ia-2",
+                "description": "IAM Identity Center provides centralized authentication with built-in MFA support including TOTP, hardware security keys (FIDO2), and push notification authenticators. It federates with external SAML 2.0 and OIDC identity providers, enabling organizations to extend their existing identity infrastructure to AWS access.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  },
+                  {
+                    "name": "cjis-delta",
+                    "value": "CJIS v6.0 requires AAL2 multi-factor authentication for all users accessing CJI. This exceeds the FedRAMP High baseline by mandating phishing-resistant authenticators (hardware tokens or push-based MFA) and prohibiting SMS-based OTP as a second factor for CJI systems."
+                  }
+                ]
+              },
+              {
+                "uuid": "a9b0c1d2-789a-bcde-f012-345678901234",
+                "control-id": "ia-8",
+                "description": "IAM Identity Center supports federation with external identity providers via SAML 2.0 and OIDC, enabling identification and authentication of non-organizational users from trusted partner organizations. Attribute-based access control (ABAC) can enforce authorization decisions based on identity attributes asserted by the external IdP.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "b0c1d2e3-89ab-cdef-0123-456789012345",
+        "type": "service",
+        "title": "AWS Client VPN",
+        "description": "AWS Client VPN provides managed, certificate-based VPN access to AWS resources and on-premises networks, enabling secure remote connectivity with integration to Active Directory and SAML-based identity providers for authentication.",
+        "control-implementations": [
+          {
+            "uuid": "c1d2e3f4-9abc-def0-1234-567890123456",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS Client VPN",
+            "implemented-requirements": [
+              {
+                "uuid": "d2e3f4a5-abcd-ef01-2345-678901234567",
+                "control-id": "ac-17",
+                "description": "AWS Client VPN establishes encrypted TLS tunnels for remote access to VPC resources. It enforces authentication through mutual TLS certificates, Active Directory credentials, or SAML-based federation. Authorization rules control which network CIDR ranges authenticated users can reach, and connection logging provides audit trails of all remote access sessions.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "e3f4a5b6-bcde-f012-3456-789012345678",
+        "type": "service",
+        "title": "AWS Secrets Manager",
+        "description": "AWS Secrets Manager stores, rotates, and retrieves database credentials, API keys, and other secrets throughout their lifecycle, with automatic rotation support and fine-grained IAM-based access control.",
+        "control-implementations": [
+          {
+            "uuid": "f4a5b6c7-cdef-0123-4567-890123456789",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS Secrets Manager",
+            "implemented-requirements": [
+              {
+                "uuid": "a5b6c7d8-def0-1234-5678-901234567890",
+                "control-id": "ia-5",
+                "description": "Secrets Manager manages authenticator lifecycle by storing credentials encrypted with KMS, enforcing automatic rotation on configurable schedules, and providing versioned secret history. Lambda-based rotation functions update credentials in both Secrets Manager and the target service atomically, satisfying the requirement to manage system authenticator content changes.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "b6c7d8e9-ef01-2345-6789-012345678901",
+        "type": "service",
+        "title": "Amazon Cognito",
+        "description": "Amazon Cognito provides identity management for external-facing applications, handling user sign-up, sign-in, and access control for users who exist outside the organization's internal identity infrastructure.",
+        "control-implementations": [
+          {
+            "uuid": "c7d8e9f0-f012-3456-789a-123456789012",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon Cognito",
+            "implemented-requirements": [
+              {
+                "uuid": "d8e9f0a1-0123-4567-89ab-234567890123",
+                "control-id": "ia-8",
+                "description": "Cognito uniquely identifies and authenticates non-organizational users through user pools with configurable sign-up and sign-in flows. It supports federation with external identity providers (social, SAML, OIDC), adaptive authentication with risk-based challenges, and MFA enforcement, satisfying the requirement to identify and authenticate non-organizational users.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "01a2b3c4-d5e6-7890-abcd-ef0123456701",
+        "type": "service",
+        "title": "Amazon VPC Flow Logs",
+        "description": "Amazon VPC Flow Logs capture IP traffic flow data for network interfaces in a VPC, providing visibility into network-level activity for security monitoring and troubleshooting.",
+        "control-implementations": [
+          {
+            "uuid": "02a2b3c4-d5e6-7890-abcd-ef0123456702",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon VPC Flow Logs",
+            "implemented-requirements": [
+              {
+                "uuid": "03a2b3c4-d5e6-7890-abcd-ef0123456703",
+                "control-id": "au-2",
+                "description": "VPC Flow Logs capture network-level events that CloudTrail does not — accepted and rejected traffic at the ENI, subnet, or VPC level. This supplements CloudTrail's API-layer audit logging with network-layer event logging, satisfying the requirement to identify events the system is capable of auditing across both application and network tiers.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "04a2b3c4-d5e6-7890-abcd-ef0123456704",
+        "type": "service",
+        "title": "Amazon CloudWatch Logs Insights",
+        "description": "Amazon CloudWatch Logs Insights provides an interactive query engine for searching, filtering, and analyzing log data stored in CloudWatch Logs groups, enabling operational and security analysis of CloudTrail, VPC Flow Logs, and application logs.",
+        "control-implementations": [
+          {
+            "uuid": "05a2b3c4-d5e6-7890-abcd-ef0123456705",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon CloudWatch Logs Insights",
+            "implemented-requirements": [
+              {
+                "uuid": "06a2b3c4-d5e6-7890-abcd-ef0123456706",
+                "control-id": "au-6",
+                "description": "CloudWatch Logs Insights provides the query and analysis capability needed to review audit records. Analysts can write structured queries against CloudTrail logs and VPC Flow Logs to identify unauthorized access attempts, privilege escalation patterns, and anomalous activity, satisfying the requirement to review and analyze system audit records for indications of inappropriate or unusual activity.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  },
+                  {
+                    "name": "cjis-delta",
+                    "value": "CJIS v6.0 Section 5.4 requires audit logs capturing CJI access be retained for a minimum of one year (365 days), reviewed at minimum weekly, and monitored using automated tools to flag suspicious activity. Organizations must assign personnel to review logs and demonstrate a documented review process, exceeding the FedRAMP High baseline review frequency."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "07a2b3c4-d5e6-7890-abcd-ef0123456707",
+        "type": "service",
+        "title": "Amazon Athena",
+        "description": "Amazon Athena is a serverless interactive query service that analyzes data in Amazon S3 using standard SQL, commonly used to query CloudTrail logs archived in S3 for long-term audit analysis and forensic investigations.",
+        "control-implementations": [
+          {
+            "uuid": "08a2b3c4-d5e6-7890-abcd-ef0123456708",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon Athena",
+            "implemented-requirements": [
+              {
+                "uuid": "09a2b3c4-d5e6-7890-abcd-ef0123456709",
+                "control-id": "au-6",
+                "description": "Athena enables SQL-based analysis of CloudTrail logs stored in S3, supporting audit record review over historical data beyond CloudWatch's default retention window. This is particularly valuable for long-term trend analysis and incident forensics, satisfying the requirement to review and analyze audit records for indications of inappropriate or unusual activity.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "10a2b3c4-d5e6-7890-abcd-ef0123456710",
+        "type": "service",
+        "title": "Amazon S3",
+        "description": "Amazon Simple Storage Service (S3) provides object storage with configurable access controls, encryption, versioning, and immutability features used to protect audit logs and compliance evidence from unauthorized modification or deletion.",
+        "control-implementations": [
+          {
+            "uuid": "11a2b3c4-d5e6-7890-abcd-ef0123456711",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon S3",
+            "implemented-requirements": [
+              {
+                "uuid": "12a2b3c4-d5e6-7890-abcd-ef0123456712",
+                "control-id": "au-9",
+                "description": "S3 protects audit information from unauthorized modification and deletion through multiple mechanisms: S3 Object Lock (WORM compliance mode) prevents log objects from being deleted or overwritten for a defined retention period, bucket policies with explicit deny statements block delete operations even from privileged users, and server-side encryption with KMS-managed keys protects audit records at rest.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "16a2b3c4-d5e6-7890-abcd-ef0123456716",
+                "control-id": "sc-28",
+                "description": "S3 protects information at rest using server-side encryption with KMS-managed keys (SSE-KMS). When configured with a customer managed key (CMK), the organization retains full control over key material, key rotation policy, and key access grants. Default bucket encryption can be enforced via bucket policies that deny PutObject requests lacking SSE-KMS headers.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  },
+                  {
+                    "name": "cjis-delta",
+                    "value": "CJIS v6.0 requires agency-managed customer managed keys (CMK) for encrypting CJI at rest — AWS-managed keys do not satisfy this requirement. If AWS-managed keys are used, AWS personnel have theoretical access to decrypt CJI, which brings them into CJIS personnel security scope and requires fingerprint-based background checks for cloud provider staff. Agency-managed CMKs keep key material outside AWS control, removing cloud provider personnel from CJIS personnel security scope and making the deployment viable."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "13a2b3c4-d5e6-7890-abcd-ef0123456713",
+        "type": "service",
+        "title": "AWS Security Hub",
+        "description": "AWS Security Hub aggregates security findings from multiple AWS services (GuardDuty, Inspector, Macie, Config, IAM Access Analyzer) and third-party tools into a centralized dashboard, providing automated compliance checks against security standards.",
+        "control-implementations": [
+          {
+            "uuid": "14a2b3c4-d5e6-7890-abcd-ef0123456714",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS Security Hub",
+            "implemented-requirements": [
+              {
+                "uuid": "15a2b3c4-d5e6-7890-abcd-ef0123456715",
+                "control-id": "au-6.1",
+                "description": "Security Hub provides automated audit record review and analysis by continuously evaluating findings from CloudTrail, Config, and GuardDuty against security standards (CIS Benchmarks, NIST 800-53, PCI DSS). Automated findings surface misconfigurations and anomalies without requiring manual log review, satisfying the AU-6(1) enhancement for automated integration of audit review, analysis, and reporting. Required at FedRAMP High baseline.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "53a2b3c4-d5e6-7890-abcd-ef0123456753",
+                "control-id": "si-4",
+                "description": "Security Hub aggregates and correlates monitoring data from GuardDuty, Config, Inspector, Macie, and third-party tools into a unified findings format (AWS Security Finding Format). It provides cross-service visibility into attacks, misconfigurations, and policy violations across all accounts and regions, satisfying the requirement to analyze detected events and anomalies as part of system monitoring.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "54a2b3c4-d5e6-7890-abcd-ef0123456754",
+                "control-id": "ir-5",
+                "description": "Security Hub tracks and documents security incidents through its findings workflow. Each finding includes severity, resource details, remediation guidance, and workflow state (NEW, NOTIFIED, SUPPRESSED, RESOLVED). Findings persist as a searchable record of incidents across the organization, satisfying the requirement to track and document incidents.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "17a2b3c4-d5e6-7890-abcd-ef0123456717",
+        "type": "service",
+        "title": "Amazon VPC",
+        "description": "Amazon Virtual Private Cloud (VPC) provides logically isolated network environments with configurable IP addressing, subnets, route tables, security groups, and network access control lists (NACLs) for controlling traffic flow at multiple layers.",
+        "control-implementations": [
+          {
+            "uuid": "18a2b3c4-d5e6-7890-abcd-ef0123456718",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon VPC",
+            "implemented-requirements": [
+              {
+                "uuid": "19a2b3c4-d5e6-7890-abcd-ef0123456719",
+                "control-id": "sc-7",
+                "description": "VPC provides boundary protection through multiple layers: security groups act as stateful firewalls at the instance level controlling inbound and outbound traffic by protocol, port, and source/destination; network ACLs provide stateless filtering at the subnet level; route tables control traffic flow between subnets and to internet/NAT gateways; and VPC peering and transit gateways control inter-VPC communication. This layered architecture satisfies the requirement to monitor and control communications at external and key internal boundaries.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "41a2b3c4-d5e6-7890-abcd-ef0123456741",
+                "control-id": "cm-7",
+                "description": "VPC security groups and network ACLs enforce least functionality at the network layer by restricting which ports, protocols, and source/destination addresses are permitted. Security groups operate on a default-deny-inbound model — only explicitly allowed traffic reaches the resource. Combined with AWS Config Rules like restricted-ssh and restricted-common-ports, unauthorized port exposure is detected and flagged, satisfying the requirement to prohibit or restrict the use of specified functions, ports, protocols, and services.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "20a2b3c4-d5e6-7890-abcd-ef0123456720",
+        "type": "service",
+        "title": "AWS Network Firewall",
+        "description": "AWS Network Firewall provides stateful and stateless network traffic inspection and filtering at the VPC level, with support for intrusion detection and prevention (IDS/IPS), domain filtering, and custom Suricata-compatible rule groups.",
+        "control-implementations": [
+          {
+            "uuid": "21a2b3c4-d5e6-7890-abcd-ef0123456721",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS Network Firewall",
+            "implemented-requirements": [
+              {
+                "uuid": "22a2b3c4-d5e6-7890-abcd-ef0123456722",
+                "control-id": "sc-7",
+                "description": "AWS Network Firewall provides managed stateful inspection at VPC ingress and egress points, enabling deep packet inspection, protocol-based filtering, and IDS/IPS capabilities using Suricata-compatible rules. It supplements VPC security groups and NACLs with application-layer visibility, satisfying the requirement for boundary protection mechanisms that deny traffic by default and allow by exception at managed interfaces.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "23a2b3c4-d5e6-7890-abcd-ef0123456723",
+        "type": "service",
+        "title": "AWS Certificate Manager",
+        "description": "AWS Certificate Manager (ACM) provisions, manages, and deploys public and private TLS certificates for use with AWS services, automating certificate renewal and eliminating manual certificate lifecycle management.",
+        "control-implementations": [
+          {
+            "uuid": "24a2b3c4-d5e6-7890-abcd-ef0123456724",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS Certificate Manager",
+            "implemented-requirements": [
+              {
+                "uuid": "25a2b3c4-d5e6-7890-abcd-ef0123456725",
+                "control-id": "sc-8",
+                "description": "ACM provisions TLS certificates that enable encryption of data in transit across AWS services. Certificates deployed to ALB, CloudFront, and API Gateway terminate TLS connections, ensuring transmission confidentiality. ACM automates certificate renewal, preventing lapses in encryption coverage due to expired certificates.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "26a2b3c4-d5e6-7890-abcd-ef0123456726",
+        "type": "service",
+        "title": "Amazon CloudFront",
+        "description": "Amazon CloudFront is a content delivery network (CDN) that accelerates delivery of web content and APIs, with configurable TLS security policies, origin access controls, and edge-level request filtering.",
+        "control-implementations": [
+          {
+            "uuid": "27a2b3c4-d5e6-7890-abcd-ef0123456727",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon CloudFront",
+            "implemented-requirements": [
+              {
+                "uuid": "28a2b3c4-d5e6-7890-abcd-ef0123456728",
+                "control-id": "sc-8",
+                "description": "CloudFront enforces transmission confidentiality through configurable TLS security policies that set the minimum TLS version (TLS 1.2 required for FedRAMP) and cipher suites for viewer-facing and origin-facing connections. The viewer protocol policy can require HTTPS-only, redirecting HTTP requests to HTTPS. Origin protocol policies enforce TLS between CloudFront and backend services.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "29a2b3c4-d5e6-7890-abcd-ef0123456729",
+        "type": "service",
+        "title": "AWS KMS",
+        "description": "AWS Key Management Service (KMS) creates, manages, and controls cryptographic keys used to encrypt data across AWS services, with support for customer managed keys (CMKs), automatic key rotation, and FIPS 140-2/3 validated hardware security modules (HSMs).",
+        "control-implementations": [
+          {
+            "uuid": "30a2b3c4-d5e6-7890-abcd-ef0123456730",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS KMS",
+            "implemented-requirements": [
+              {
+                "uuid": "31a2b3c4-d5e6-7890-abcd-ef0123456731",
+                "control-id": "sc-12",
+                "description": "KMS establishes and manages cryptographic keys through a centralized service backed by FIPS 140-2/3 validated HSMs. Organizations create customer managed keys (CMKs) with configurable key policies, automatic annual rotation, and CloudTrail-logged key usage. Key policies and IAM grants control which principals can use, manage, and administer keys, satisfying the requirement to establish and manage cryptographic keys in accordance with organizational requirements.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "32a2b3c4-d5e6-7890-abcd-ef0123456732",
+                "control-id": "sc-13",
+                "description": "KMS provides NIST-approved cryptographic protection using AES-256-GCM for symmetric encryption and elliptic curve or RSA algorithms for asymmetric operations, all executed within FIPS 140-2 Level 2 validated HSMs (Level 3 in AWS GovCloud). In GovCloud regions, all KMS API endpoints use FIPS 140-3 validated TLS endpoints, satisfying the requirement to implement FIPS-validated cryptography for the protection of information.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "33a2b3c4-d5e6-7890-abcd-ef0123456733",
+                "control-id": "sc-28.1",
+                "description": "KMS customer managed keys (CMKs) provide the cryptographic mechanism for SC-28(1), enabling organizations to implement encryption of information at rest with organization-controlled key material. CMKs integrate with S3, EBS, RDS, and other AWS storage services to encrypt data with keys that the organization creates, rotates, disables, and deletes — not AWS. Required at FedRAMP High baseline.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "34a2b3c4-d5e6-7890-abcd-ef0123456734",
+        "type": "service",
+        "title": "Amazon EBS",
+        "description": "Amazon Elastic Block Store (EBS) provides persistent block storage volumes for EC2 instances, with support for encryption at rest using KMS-managed keys and automatic encryption enforcement at the account level.",
+        "control-implementations": [
+          {
+            "uuid": "35a2b3c4-d5e6-7890-abcd-ef0123456735",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon EBS",
+            "implemented-requirements": [
+              {
+                "uuid": "36a2b3c4-d5e6-7890-abcd-ef0123456736",
+                "control-id": "sc-28",
+                "description": "EBS encrypts data at rest on volumes using AES-256 encryption with KMS-managed keys. Account-level default encryption can be enabled to automatically encrypt all new EBS volumes and snapshots without requiring per-volume configuration, satisfying the requirement to protect the confidentiality and integrity of information at rest.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "37a2b3c4-d5e6-7890-abcd-ef0123456737",
+        "type": "service",
+        "title": "Amazon RDS",
+        "description": "Amazon Relational Database Service (RDS) provides managed relational databases with support for encryption at rest using KMS-managed keys, automated backups, and encrypted read replicas.",
+        "control-implementations": [
+          {
+            "uuid": "38a2b3c4-d5e6-7890-abcd-ef0123456738",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon RDS",
+            "implemented-requirements": [
+              {
+                "uuid": "39a2b3c4-d5e6-7890-abcd-ef0123456739",
+                "control-id": "sc-28",
+                "description": "RDS encrypts data at rest for DB instances, automated backups, read replicas, and snapshots using AES-256 encryption with KMS-managed keys. Encryption must be enabled at instance creation and applies to the underlying storage, automated backups, and snapshots, satisfying the requirement to protect the confidentiality and integrity of information at rest.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "42a2b3c4-d5e6-7890-abcd-ef0123456742",
+        "type": "service",
+        "title": "AWS Config",
+        "description": "AWS Config continuously records the configuration state of AWS resources, evaluates configurations against desired settings using Config Rules, and maintains a configuration history and inventory for compliance auditing and change tracking.",
+        "control-implementations": [
+          {
+            "uuid": "43a2b3c4-d5e6-7890-abcd-ef0123456743",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS Config",
+            "implemented-requirements": [
+              {
+                "uuid": "44a2b3c4-d5e6-7890-abcd-ef0123456744",
+                "control-id": "cm-2",
+                "description": "AWS Config records the configuration state of AWS resources as configuration items, creating a point-in-time snapshot each time a resource is created, modified, or deleted. The configuration timeline provides a historical record of how each resource's configuration has changed over time, satisfying the requirement to develop, document, and maintain a current baseline configuration of the system.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "45a2b3c4-d5e6-7890-abcd-ef0123456745",
+                "control-id": "cm-3",
+                "description": "AWS Config captures the before-and-after configuration state of resources when changes occur, providing the 'what changed' component of configuration change control. Config delivers configuration change notifications via SNS, enabling automated review of changes. Combined with CloudTrail's record of who initiated each change, Config satisfies the requirement to determine, document, and review configuration-controlled changes.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "46a2b3c4-d5e6-7890-abcd-ef0123456746",
+                "control-id": "cm-6",
+                "description": "AWS Config Rules evaluate whether resource configurations comply with desired settings. AWS managed rules provide pre-built checks (s3-bucket-server-side-encryption-enabled, iam-password-policy, restricted-ssh), and custom rules use Lambda functions for organization-specific checks. Resources are marked COMPLIANT or NON_COMPLIANT continuously, and Config can trigger SSM Automation runbooks for automated remediation, satisfying the requirement to establish, implement, and monitor configuration settings.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "47a2b3c4-d5e6-7890-abcd-ef0123456747",
+                "control-id": "cm-8",
+                "description": "AWS Config automatically discovers and inventories AWS resources across supported resource types (EC2 instances, S3 buckets, IAM roles, security groups, and 380+ others). Config Advanced Queries enable SQL-like queries against the inventory (e.g., 'SELECT resourceId WHERE resourceType = AWS::EC2::Instance AND configuration.encrypted = false'). The resource inventory updates automatically as resources are created, modified, or deleted, satisfying the requirement to develop and document a system component inventory that accurately reflects the system.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "51a2b3c4-d5e6-7890-abcd-ef0123456751",
+                "control-id": "si-7",
+                "description": "AWS Config Rules detect unauthorized changes to resource configurations by continuously evaluating resource state against approved baselines. When a resource's configuration deviates from the approved state — such as an AMI swap on an EC2 instance, a Lambda function code hash change, or an unauthorized software package appearing in SSM Inventory — Config marks the resource NON_COMPLIANT and can trigger automated alerts, satisfying the requirement to employ integrity verification tools to detect unauthorized changes.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "48a2b3c4-d5e6-7890-abcd-ef0123456748",
+        "type": "service",
+        "title": "AWS Systems Manager",
+        "description": "AWS Systems Manager (SSM) provides operational management of EC2 instances and on-premises servers, including inventory collection, patch management, parameter storage, and automation of administrative tasks through the SSM Agent.",
+        "control-implementations": [
+          {
+            "uuid": "49a2b3c4-d5e6-7890-abcd-ef0123456749",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS Systems Manager",
+            "implemented-requirements": [
+              {
+                "uuid": "50a2b3c4-d5e6-7890-abcd-ef0123456750",
+                "control-id": "cm-8",
+                "description": "SSM Inventory collects OS-level metadata from managed instances including installed applications, OS version, network configuration, Windows updates, and running services. This extends AWS Config's cloud-layer inventory with instance-layer detail that Config cannot see, satisfying the requirement for a component inventory at the level of granularity deemed necessary for tracking and reporting.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "52a2b3c4-d5e6-7890-abcd-ef0123456752",
+                "control-id": "si-2",
+                "description": "SSM Patch Manager automates flaw remediation by defining patch baselines (approved, auto-approved, and rejected patches), scanning managed instances for missing patches, and deploying updates during scheduled maintenance windows. Patch compliance reports identify which instances are missing critical or security-relevant updates, satisfying the requirement to identify, report, and correct system flaws and install security-relevant updates within organization-defined time periods.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "55a2b3c4-d5e6-7890-abcd-ef0123456755",
+        "type": "service",
+        "title": "Amazon GuardDuty",
+        "description": "Amazon GuardDuty is a threat detection service that continuously monitors AWS accounts and workloads by analyzing CloudTrail management and data events, VPC Flow Logs, and DNS query logs using machine learning, anomaly detection, and integrated threat intelligence.",
+        "control-implementations": [
+          {
+            "uuid": "56a2b3c4-d5e6-7890-abcd-ef0123456756",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon GuardDuty",
+            "implemented-requirements": [
+              {
+                "uuid": "57a2b3c4-d5e6-7890-abcd-ef0123456757",
+                "control-id": "si-3",
+                "description": "GuardDuty detects malicious code indicators by analyzing CloudTrail events, VPC Flow Logs, and DNS query logs for patterns associated with malware activity — including communication with known command-and-control servers, crypto-mining traffic, and data exfiltration patterns. Findings are categorized by threat type (e.g., Trojan:EC2/BlackholeTraffic, Backdoor:EC2/C&CActivity) and severity, satisfying the requirement to detect and eradicate malicious code at system entry and exit points.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "58a2b3c4-d5e6-7890-abcd-ef0123456758",
+                "control-id": "si-4",
+                "description": "GuardDuty provides continuous system monitoring by detecting attacks and indicators of potential attacks across three data sources: CloudTrail management events (API-layer threats like credential misuse or logging tampering), VPC Flow Logs (network-layer threats like port scanning or data exfiltration), and DNS logs (domain-layer threats like queries to malware-associated domains). Findings are generated with severity ratings and detailed context, satisfying the requirement to monitor the system for attacks and unauthorized access.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "uuid": "59a2b3c4-d5e6-7890-abcd-ef0123456759",
+                "control-id": "ir-4",
+                "description": "GuardDuty provides the detection component of incident handling by identifying security events that require response — such as compromised credentials, unauthorized API calls from known malicious IPs, or EC2 instances communicating with command-and-control infrastructure. GuardDuty findings published to EventBridge trigger automated containment workflows via Lambda, satisfying the detection and analysis phase of incident handling.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "60a2b3c4-d5e6-7890-abcd-ef0123456760",
+        "type": "service",
+        "title": "Amazon EventBridge",
+        "description": "Amazon EventBridge is a serverless event bus that routes events from AWS services, custom applications, and SaaS providers to target services based on rules, enabling event-driven automation and integration workflows.",
+        "control-implementations": [
+          {
+            "uuid": "61a2b3c4-d5e6-7890-abcd-ef0123456761",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon EventBridge",
+            "implemented-requirements": [
+              {
+                "uuid": "62a2b3c4-d5e6-7890-abcd-ef0123456762",
+                "control-id": "ir-4",
+                "description": "EventBridge routes security findings from GuardDuty, Config, and Security Hub to automated response targets (Lambda functions, SNS topics, Step Functions) based on configurable event rules. Rules can filter by finding severity, type, or affected resource, enabling automated containment and eradication workflows — such as isolating a compromised instance or revoking compromised credentials — satisfying the requirement to implement an incident handling capability that includes containment, eradication, and recovery.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "63a2b3c4-d5e6-7890-abcd-ef0123456763",
+        "type": "service",
+        "title": "AWS Lambda",
+        "description": "AWS Lambda is a serverless compute service that executes code in response to events without provisioning or managing servers, commonly used in security automation workflows for incident response, remediation, and compliance enforcement.",
+        "control-implementations": [
+          {
+            "uuid": "64a2b3c4-d5e6-7890-abcd-ef0123456764",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by AWS Lambda",
+            "implemented-requirements": [
+              {
+                "uuid": "65a2b3c4-d5e6-7890-abcd-ef0123456765",
+                "control-id": "ir-4",
+                "description": "Lambda functions execute automated incident response actions triggered by EventBridge rules — such as modifying security groups to isolate compromised EC2 instances, disabling compromised IAM access keys, or creating forensic snapshots of affected EBS volumes. This automated response capability satisfies the requirement for incident handling that includes containment, eradication, and recovery without requiring manual intervention.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "66a2b3c4-d5e6-7890-abcd-ef0123456766",
+        "type": "service",
+        "title": "Amazon SNS",
+        "description": "Amazon Simple Notification Service (SNS) is a managed publish-subscribe messaging service that delivers notifications to subscribing endpoints including email, SMS, HTTP/S webhooks, Lambda functions, and SQS queues.",
+        "control-implementations": [
+          {
+            "uuid": "67a2b3c4-d5e6-7890-abcd-ef0123456767",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon SNS",
+            "implemented-requirements": [
+              {
+                "uuid": "68a2b3c4-d5e6-7890-abcd-ef0123456768",
+                "control-id": "ir-6",
+                "description": "SNS delivers incident notifications to designated personnel by publishing GuardDuty and Security Hub findings to SNS topics subscribed by security operations teams via email, SMS, or webhook integrations (Slack, PagerDuty). This automated notification pipeline satisfies the requirement to report suspected incidents to the organizational incident response capability within organization-defined time periods.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  },
+                  {
+                    "name": "cjis-delta",
+                    "value": "CJIS v6.0 Section 5.3 requires that security incidents involving CJI be reported to the CJIS Systems Officer (CSO) and the FBI CJIS Division. This is a specific reporting chain requirement not present in the FedRAMP High baseline, which only requires reporting to organization-defined authorities. SNS topic subscriptions must include the CSO notification endpoint for CJI-related findings."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "69a2b3c4-d5e6-7890-abcd-ef0123456769",
+        "type": "service",
+        "title": "Amazon CloudWatch",
+        "description": "Amazon CloudWatch monitors AWS resources and applications in real time, collecting metrics, logs, and events, and providing configurable alarms that trigger notifications or automated actions when thresholds are breached.",
+        "control-implementations": [
+          {
+            "uuid": "70a2b3c4-d5e6-7890-abcd-ef0123456770",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST 800-53 Rev 5 controls implemented by Amazon CloudWatch",
+            "implemented-requirements": [
+              {
+                "uuid": "71a2b3c4-d5e6-7890-abcd-ef0123456771",
+                "control-id": "si-4",
+                "description": "CloudWatch Alarms monitor operational and security metrics — such as unauthorized API call counts, console sign-in failures, IAM policy changes, and network traffic anomalies — and trigger SNS notifications when thresholds are breached. CloudWatch metric filters applied to CloudTrail log groups detect specific event patterns (e.g., root account usage, security group changes), satisfying the requirement to monitor the system and adjust monitoring levels based on changes in risk.",
+                "props": [
+                  {
+                    "name": "fedramp-high",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
