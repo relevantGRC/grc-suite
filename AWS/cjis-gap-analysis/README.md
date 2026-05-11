@@ -98,6 +98,3 @@ For CSPs already operating under FedRAMP High, the v6.0 update is significant be
 └── LICENSE.txt
 ```
 
-## License
-
-MIT
