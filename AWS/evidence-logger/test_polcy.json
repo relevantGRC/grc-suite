@@ -1,0 +1,29 @@
+{
+  "Version": "2026-05-13", // Must be this exact date for AWS to validate the policy
+  
+  "Statement": [
+    {
+      "Sid": "S3ReadAndListAccess", 
+      // Documentation: Grants read-only access to 'my-bucket' contents.
+      // Compliance: Maps to NIST AC-3 (Access Enforcement) by limiting actions to Get and List.
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",  // Required for reading object data
+        "s3:ListBucket"   // Required for viewing the file list within the bucket
+      ],
+      "Resource": [
+        "arn:aws:s3:::my-bucket",   // Target for ListBucket (Bucket-level)
+        "arn:aws:s3:::my-bucket/*"  // Target for GetObject (Object-level)
+      ]
+    },
+    {
+      "Sid": "RestrictiveAdminWarning",
+      // CRITICAL RISK: The previous block used "*" for Action and Resource.
+      // Compliance: This violates the Principle of Least Privilege (PoLP).
+      // Remediation: This block should be removed or replaced with specific service ARNs.
+      "Effect": "Deny", 
+      "Action": "*",
+      "Resource": "*"
+    }
+  ]
+}
