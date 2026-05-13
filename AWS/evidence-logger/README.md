@@ -95,8 +95,5 @@ CJIS v6.0 (audit standard from April 1, 2026) introduces a hard delta on **AU-6*
 
 ## Framework Reference
 
-Control family mappings and AWS implementation details are documented in [nist-800-53-rev-5-to-aws-mapping](https://github.com/relevantGRC/nist-800-53-rev-5-to-aws-mapping).
+Control family mappings and AWS implementation details are documented in [nist-800-53-rev-5-to-aws-mapping](https://github.com/relevantGRC/grc-suite/tree/main/AWS/nist-800-53-rev-5-to-aws-mapping%20).
 
-## License
-
-MIT License
