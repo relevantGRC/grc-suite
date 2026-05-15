@@ -1,0 +1,6 @@
+policy_id: POL-AC-001
+name: Access Control Policy
+description: Enforce MFA for privileged roles
+owner: Security Team
+risk_level: High
+enforcement: mandatory
