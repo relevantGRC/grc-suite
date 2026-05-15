@@ -1,0 +1,14 @@
+policy_id: POL-AC-001
+
+controls:
+  - framework: ISO27001
+    control_id: A.5.15
+    description: Access control policy
+
+  - framework: NIST80053
+    control_id: AC-2
+    description: Account Management
+
+  - framework: ISO42001
+    control_id: A.6.2
+    description: AI system access control
