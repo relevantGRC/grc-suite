@@ -33,3 +33,23 @@ This module supports control-to-evidence mapping across:
   - Control implementation as measurable systems
   - Alignment with automation and CI/CD pipelines
   - Foundation for Compliance as Code
+
+## Repository Structure
+
+```bash
+grc-evidence-mapping/
+├── .github/
+│   └── workflows/
+│       └── validate-evidence.yml  # CI/CD pipeline to test evidence schemas
+├── schemas/
+│   ├── control-mapping.schema.json # JSON Schema ensuring valid evidence definitions
+├── frameworks/
+│   ├── iso27001-2022.json         # Control mapping data files
+│   ├── soc2.json
+│   └── eu-ai-act.json
+├── evidence/
+│   └── sample-evidence-manifest.json # Concrete examples of systems meeting controls
+├── README.md
+└── package.json                   # Or a simple python requirements file for validation
+```
+
