@@ -1,0 +1,7 @@
+.terraform/
+*.tfstate
+*.tfstate.backup
+__pycache__/
+.DS_Store
+*.json
+!evidence/**/*.json
