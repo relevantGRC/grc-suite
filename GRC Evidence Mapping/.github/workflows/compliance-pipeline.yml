@@ -1,0 +1,36 @@
+name: Continuous Compliance Pipeline
+    on:
+      push:
+        branches: [ main ]
+      schedule:
+        - cron: '0 8 * * *'
+    
+    jobs:
+      gather-and-document:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout Repository
+            uses: actions/checkout@v3
+            
+          - name: Set up Python
+            uses: actions/setup-python@v4
+            with:
+              python-version: '3.10'
+            
+          - name: Run Checkov against Frameworks
+            continue-on-error: true
+            run: |
+              pip install checkov
+              mkdir -p evidence/iso27001
+              checkov -d infrastructure/ --framework iso27001 --output json > evidence/iso27001/daily-scan-results.json
+              
+          - name: Convert JSON Evidence to Markdown
+            run: python scripts/json-to-markdown.py
+              
+          - name: Commit Evidence to Repository
+            run: |
+              git config --global user.name "EaC Bot"
+              git config --global user.email "compliance-bot@company.local"
+              git add evidence/ governance-vault/
+              git commit -m "Automated Evidence & Vault Sync: $(date +'%Y-%m-%d')"
+              git push
