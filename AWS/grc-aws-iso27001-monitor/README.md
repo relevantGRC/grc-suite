@@ -2,9 +2,10 @@ An automated Compliance-as-Code and Evidence Generation repository designed to m
 This repository tracks custom automated Lambda scanners, security boundaries, and logging pipelines to prove continuous operational compliance to external ISMS auditors.
 
 ## 🏗️ Architecture Blueprint
+```
                      ┌────────────────── [ AWS Organizations / SCPs ] ──────────────────┐
                      │                                                                  │
-[IAM / Users] ───► [EventBridge] ───► [AWS Lambda] ───► [CloudWatch / Metric Filters]  │
+[IAM / Users] ───► [EventBridge] ───► [AWS Lambda] ───► [CloudWatch / Metric Filters]   │
                      │                    │                                             │
                      ▼                    ▼                                             ▼
              [Tagging Policy]     [IAM Credential Report]                       [Amazon SES Alerts]
@@ -15,6 +16,8 @@ This repository tracks custom automated Lambda scanners, security boundaries, an
                                │  (Object Lock /     │
                                │   Compliance Mode)  │
                                └─────────────────────┘
+```
+
 ## 📊 Control Mapping & Evidence Matrix
 This solution maps specific cloud architecture implementations directly to the ISO/IEC 27001:2022 Annex A controls, establishing a continuous monitoring loop.
 |ISO 27001:2022 |Control	Domain / Control Name|	AWS Technical Implementation|	Automation / Evidence Artifact|
