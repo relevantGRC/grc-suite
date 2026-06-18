@@ -1,0 +1,29 @@
+# SOC 2 / ISO 27001 / NIST 800-53 Rev 5 Crosswalk
+
+Pivot: SOC 2 Trust Services Criteria (Common Criteria). NIST 800-53 Rev 5 is the bridge column; ISO 27001:2022 Annex A is the third column.
+
+| SOC 2 CC | NIST 800-53 | ISO 27001:2022 | Confidence | Rationale |
+| --- | --- | --- | --- | --- |
+| CC6.1 | AC-3 | A.5.15 / A.8.3 | Strong | AC-3 enforces approved authorizations for logical access at the system and application layer. CC6.1 frames logical-access security architecture and enforcement mechanisms. ISO A.5.15 (access control) and A.8.3 (information access restriction) address the same enforcement intent from policy and technical restriction angles. |
+| CC6.2 | AC-2 | A.5.16 / A.5.18 | Strong | AC-2 governs the full account lifecycle — approve before create, modify, disable, remove, and periodic review. CC6.2 covers registration and authorization of new users before credentials are issued. ISO A.5.16 (identity management) and A.5.18 (access rights) map to provisioning and rights assignment during onboarding. |
+| CC6.3 | AC-6 / AC-2 | A.8.2 / A.8.3 | Strong | AC-6 authorizes only the access necessary for assigned tasks (least privilege). AC-2 supports modification and removal when roles change. CC6.3 covers role-based access, modification, and removal including least privilege and segregation of duties. ISO A.8.2 (privileged access rights) and A.8.3 (information access restriction) align with privilege minimization and access boundaries. |
+| CC6.6 | IA-2 | A.8.5 / A.5.16 | Strong | IA-2 requires unique identification and authentication of organizational users. CC6.6 addresses measures against threats from outside the boundary, including authentication strength. ISO A.8.5 (secure authentication) and A.5.16 (identity management) cover the authentication mechanism and the identity binding it depends on. |
+| CC6.6 | IA-5 | A.5.17 | Partial | IA-5 manages the authenticator lifecycle — issuance, strength, default changes, rotation, and revocation. CC6.6 blends authentication mechanism and credential management. ISO separates A.5.17 (authentication information / authenticator management) from A.8.5 (secure authentication mechanism). An ISO audit may require the authenticator-policy artifact separately even when SOC 2 and NIST evidence already covers the mechanism. |
+| CC7.2 | AU-2 | A.8.15 | Strong | AU-2 requires identifying event types the system can log, selecting the subset to log, and reviewing that selection for investigative adequacy. CC7.2 monitors system components for anomalies. ISO A.8.15 (logging) aligns with defining and maintaining what gets logged. |
+| CC7.3 | AU-6 | A.8.16 | Strong | AU-6 requires reviewing and analyzing audit records on a defined frequency, reporting findings, and adjusting depth when risk changes. CC7.3 evaluates security events for potential incidents. ISO A.8.16 (monitoring activities) maps to the analytic loop over logged events. |
+| CC8.1 | CM-2 | A.8.9 | Partial | CM-2 develops and maintains a baseline configuration under configuration control, reviewed on defined frequency and on install or upgrade. CC8.1 frames broad change management — authorize, design, test, approve, and implement changes. ISO A.8.9 (configuration management) is config-to-config alignment, but the hop to the CC8.1 change pivot is loose. CM-2 keeps a foot in the change door via baseline maintained under configuration control. |
+| CC8.1 | CM-6 | A.8.9 | Contextual | CM-6 establishes and implements restrictive configuration settings, documents deviations, and monitors changes to settings. CC8.1 expects change authorization and approval evidence. CM-6 is pure hardened-settings state — a STIG or SCAP scan demonstrates configuration posture but does not satisfy a change-approval ticket. ISO A.8.9 aligns on configuration management; A.8.32 (change management) is the closer ISO frame for the SOC 2 pivot. |
+
+## Gaps & Conflicts
+
+### CC6.6 / IA-5 (Partial)
+
+IA-5 manages the authenticator lifecycle — issuance, strength, default changes, rotation, and revocation. CC6.6 blends authentication mechanism and credential management. ISO separates A.5.17 (authentication information / authenticator management) from A.8.5 (secure authentication mechanism). An ISO audit may require the authenticator-policy artifact separately even when SOC 2 and NIST evidence already covers the mechanism.
+
+### CC8.1 / CM-2 (Partial)
+
+CM-2 develops and maintains a baseline configuration under configuration control, reviewed on defined frequency and on install or upgrade. CC8.1 frames broad change management — authorize, design, test, approve, and implement changes. ISO A.8.9 (configuration management) is config-to-config alignment, but the hop to the CC8.1 change pivot is loose. CM-2 keeps a foot in the change door via baseline maintained under configuration control.
+
+### CC8.1 / CM-6 (Contextual)
+
+CM-6 establishes and implements restrictive configuration settings, documents deviations, and monitors changes to settings. CC8.1 expects change authorization and approval evidence. CM-6 is pure hardened-settings state — a STIG or SCAP scan demonstrates configuration posture but does not satisfy a change-approval ticket. ISO A.8.9 aligns on configuration management; A.8.32 (change management) is the closer ISO frame for the SOC 2 pivot.
