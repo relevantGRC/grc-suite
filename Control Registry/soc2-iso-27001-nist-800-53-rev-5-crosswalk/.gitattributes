@@ -1,0 +1,8 @@
+# Emitted crosswalk artifacts are byte-compared by
+# `build_crosswalk.py --check`. Pin to LF so the drift gate is
+# deterministic on every platform -- a Windows checkout
+# (core.autocrlf=true) would otherwise rewrite them to CRLF and
+# the gate would false-fail even when mappings.yaml is correct.
+crosswalk.csv  text eol=lf
+crosswalk.md   text eol=lf
+crosswalk.json text eol=lf
