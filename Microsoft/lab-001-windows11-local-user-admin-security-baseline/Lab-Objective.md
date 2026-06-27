@@ -1,13 +1,17 @@
-## Lab Objective
+# Lab Objective: Local Identity & Access Management
 
-Purpose of the Lab
+## 1. Purpose of the Lab
+The primary objective of this lab is to operationalize real-world **Identity and Access Management (IAM)** on a standalone Windows 11 endpoint. By configuring and validating Administrator, Standard User, and Restricted (Child) accounts on a shared system, this lab demonstrates the practical application of the **Principle of Least Privilege (PoLP)**, the enforcement of baseline security controls, and the empirical validation of role-based access boundaries.
 
-The purpose of this lab is to practice real-world Windows 11 user account management by configuring and validating administrator, standard user, and child accounts on a shared system. The focus is on applying least privilege, enforcing basic security controls, and confirming that access levels behave as expected.
+## 2. The Security Context: Why Role-Based Access Matters
+Implementing strict access controls at the local endpoint level significantly reduces the system's attack surface. The deliberate separation between administrative and standard user contexts achieves the following critical governance objectives:
+* **Malware Containment:** Limits the potential "blast radius" of malicious code by preventing execution with system-level privileges.
+* **Configuration Integrity:** Prevents unauthorized or accidental modifications to core operating system settings, network configurations, and security policies.
+* **Auditability & Accountability:** Ensures that all elevated system changes require explicit authentication via User Account Control (UAC), providing a clear and traceable audit log for compliance verification (aligning with frameworks like NIST 800-53 AC-2).
 
-Why Role-Based Accounts Matter
-
-Role-based accounts reduce risk by ensuring users only have the permissions required to perform their tasks. Separating administrator and standard user access helps prevent accidental system changes, limits malware impact, and supports accountability when troubleshooting or auditing user activity.
-
-How This Mirrors Tier 1 Help Desk Work
-
-This lab reflects common Tier 1 responsibilities such as creating and managing user accounts, assigning appropriate permissions, troubleshooting access issues, and validating security settings. These tasks are routinely performed in managed environments where protecting systems and users is a core expectation.
+## 3. Emulating Enterprise Tier 1 Operations
+This lab environment simulates core Tier 1 IT Support and Security Operations Center (SOC) responsibilities. The tasks executed herein mirror the standard operating procedures required to protect systems and users in managed enterprise environments, specifically:
+* Provisioning and managing user identities across varying organizational trust levels.
+* Assigning and enforcing appropriate execution permissions.
+* Validating local security policy configurations (`secpol.msc`).
+* Troubleshooting access failures and ensuring that applied security controls successfully block unauthorized actions without impeding legitimate user functions.
