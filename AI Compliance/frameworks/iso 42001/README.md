@@ -13,10 +13,15 @@ Every module in this series is documented from first principles, specifically de
 
 | Modeule| Status | Title |
 |---|---|---|
-| NIST AI Risk Management Framework (AI RMF 1.0) | ✅ In progress | `frameworks/nist-ai-rmf/` |
-| ISO/IEC 42001:2023 | 🔜 Coming soon | `frameworks/iso-42001/` |
-| EU AI Act | 🔜 Coming soon | `frameworks/eu-ai-act/` |
-| OECD AI Principles | 🔜 Coming soon | `frameworks/oecd-ai-principles/` |
+| Overview | ✅ In progress | `frameworks/iso-42001/modules-01` |
+| 7 Clauses | 🔜 Coming soon | `frameworks/iso-42001/modules-02` |
+| Annex A controls | 🔜 Coming soon | `frameworks/iso-42001/modules-03` |
+| Risk Management | 🔜 Coming soon | `frameworks/iso-42001/modules-04` |
+| 7 Clauses | 🔜 Coming soon | `frameworks/iso-42001/modules-05` |
+| Operational controls | 🔜 Coming soon | `frameworks/iso-42001/modules-06` |
+| Performance Evaluation  | 🔜 Coming soon | `frameworks/iso-42001/modules-07` |
+| Continual Improvement | 🔜 Coming soon | `frameworks/iso-42001/modules-08` |
+| AI System Impact Assessments  | 🔜 Coming soon | `frameworks/iso-42001/modules-09` |
 
 
 ## Why ISO 42001 matters
