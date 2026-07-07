@@ -49,24 +49,14 @@ pointed at AI risk.
 
 ## The PDCA structure
 
-ISO 42001 is built around the Plan-Do-Check-Act cycle — a continuous
-improvement loop borrowed from quality management (W. Edwards Deming). It
-is not a one-time assessment; it runs in a loop, refined each cycle.
+ISO 42001 is built around the Plan-Do-Check-Act (PDCA) cycle, a continuous improvement loop that ensures AI governance evolves alongside the technology.
 
 | Phase | Clauses | What happens |
 |---|---|---|
 | **Plan** | 4. Context of the Organization, 5. Leadership | Understand the organization, its context, stakeholders; establish leadership commitment, policy, roles |
-| **Do** | 6. Planning, 7. Support, 8. Operation | Identify AI risks and opportunities; provide resources and competence; operate the AI management system day-to-day |
+| **Do** | 6. Planning, 7. Support, 8. Operation | Plan risk treatments; provide resources/competence; operate AI systems. |
 | **Check** | 9. Performance Evaluation | Monitor, measure, analyze, and evaluate whether the system and its AI are performing as intended |
 | **Act** | 10. Improvement | Use findings from Check to improve the system; cycle restarts at Plan with a more mature baseline |
-
-This loop is the single biggest structural difference from NIST AI RMF.
-NIST's Govern-Map-Measure-Manage functions are not strictly sequential —
-Map, Measure, and Manage happen continuously and can be revisited anytime,
-with Govern cutting across all of them. ISO 42001's clauses, by contrast,
-map onto an actual certification audit checklist — an auditor walks through
-Clauses 4 through 10 in order, checking for documented evidence at each one,
-the same way a SOC 2 or ISO 27001 auditor does today.
 
 ---
 
@@ -144,31 +134,6 @@ relationship with the certification body."
 | PDCA cycle | Plan-Do-Check-Act — the continuous improvement loop underlying ISO management system standards |
 | Management review | A required, recurring leadership review of management system performance |
 | Accredited | Officially authorized — a certification body's right to issue valid certificates is itself overseen by national accreditation bodies |
-
----
-
-## Practice questions
-
-1. What is the single biggest structural difference between NIST AI RMF and ISO 42001?
-2. Why does ISO 42001 deliberately mirror ISO 27001's structure?
-3. What is the difference between being "conformant" and being "certified"?
-4. Why might an AI vendor pursue ISO 42001 certification specifically, rather than just internally adopting NIST AI RMF?
-5. Why does ISO 42001 work pair more naturally with commercial clients than federal ones, in contrast to NIST AI RMF?
-
----
-
-## How to explain it in an interview
-
-> "ISO 42001 is the international, certifiable standard for AI management
-> systems — published by ISO in December 2023, structurally modeled on ISO
-> 27001. The key distinction from NIST AI RMF is that ISO 42001 is something
-> you can actually get audited and certified against by an accredited third
-> party, which makes it a procurement and sales tool for AI vendors in a way
-> NIST AI RMF isn't. It's built on a Plan-Do-Check-Act cycle across seven
-> core clauses, and organizations that already hold ISO 27001 have a real
-> head start because the underlying management system muscle — internal
-> audits, management review, documented control processes — transfers
-> directly."
 
 ---
 
