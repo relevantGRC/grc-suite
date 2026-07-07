@@ -26,7 +26,7 @@ It is both a learning record for all professionals. Every framework is documente
 ## Repository structure
 
 ```
-ai-grc-engineering/
+ai-compliance-engineering/
 │
 ├── README.md                          ← You are here
 │
@@ -79,7 +79,7 @@ I approach AI Governance through the lens of Technical Compliance Engineering. M
 
 Approach to having a stong AI starts with:
 
-1. **Start with the framework requirement** (e.g. NIST AI RMF GOVERN function)
+1. **Start with the framework requirement** (e.g. ISO 42001, NIST AI RMF GOVERN function)
 2. **Translate it into a policy or control** (e.g. AI Governance Policy, AI risk ownership)
 3. **Engineer it into a workflow** (e.g. AI intake process, approval gate)
 4. **Define the evidence** (e.g. signed approval record, risk register entry)
@@ -95,23 +95,6 @@ Approach to having a stong AI starts with:
 **If you are a hiring manager or client:** The templates under `templates/` are production-ready and can be adapted for immediate use. The case studies show applied thinking across industries. Scripts (coming) demonstrate engineering capability.
 
 **If you are an auditor or reviewer:** Every document is version-controlled with commit history. The control library maps controls to framework requirements. The evidence checklist shows what documentation is maintained.
-
----
-
-## Modules completed
-
-| Module | Topic | Status |
-|---|---|---|
-| Module 1 | What NIST AI RMF is, why it was created, who uses it | ✅ Complete |
-| Module 2 | The four core functions: GOVERN, MAP, MEASURE, MANAGE | ✅ Complete |
-| Module 3 | Key concepts: Trustworthy AI, AI lifecycle, risk types, impact | ✅ Complete |
-| Module 4 | Real-world application and industry use cases | ✅ Complete |
-| Module 5 | AI risk assessment — deep dive | ✅ Complete |
-| Module 6 | Governance controls | ✅ Complete |
-| Module 7 | Audit readiness and evidence | ✅ Complete |
-| Module 8 | GRC engineering and automation | ✅ Complete |
-| Module 9 | Practical templates | ✅ Complete |
-| Module 10 | Cross-framework capstone and applied case study | ✅ Complete |
 
 ---
 
