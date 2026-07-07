@@ -7,48 +7,39 @@
 
 ---
 
-## Why this module is different from anything in NIST AI RMF
-
-NIST AI RMF never specifies an exact document an auditor will request, because
-there is no NIST AI RMF auditor. ISO 42001 is the opposite — every clause
-exists because a certification auditor will, on a specific day, ask "show me
-the document that proves you did this." This module makes sure you know
-exactly what that document looks like for all seven clauses.
-
----
-
 ## Clause 4 — Context of the Organization
 
 The foundation clause: before building an AIMS, do you actually understand
 the organization you're building it for?
 
 **Requirements:**
-- **4.1** Understanding the organization and its context — internal issues
-  (structure, governance maturity, technical capability) and external issues
-  (regulatory environment, competitive pressure, customer expectations)
-- **4.2** Understanding needs and expectations of interested parties —
-  customers, regulators, employees, AI subjects (people affected by AI
-  decisions), shareholders
+- **4.1** Understanding the organization and its context — The organization shall determine internal issues
+  (structure, governance maturity, technical capability), external issues
+  (regulatory environment, competitive pressure, customer expectations), climate change, the intended purpose of the AI systems and its roles     with respect to the AI system.
+- **4.2** Understanding needs and expectations of interested parties — Interested parties
+  (customers, regulators, employees, AI subjects (people affected by AI
+  decisions), shareholder), requirements of the interested parties.
 - **4.3** Determining the scope of the AIMS — exactly which AI systems,
   business units, locations, and activities fall inside the boundary
-- **4.4** AI management system — the umbrella requirement to establish,
-  implement, maintain, and continually improve the AIMS
+- **4.4** AI management system — establish,
+  implement, maintain, and continually improve the AIMS. 
 
-**Documentation produced:** a documented scope statement (1-2 pages) naming
-exactly which systems, locations, and functions are included, plus a
-stakeholder analysis.
+**Documentation:** documente the scope statement naming
+exactly which systems, role, locations, and functions for the AI system. 
 
-**What an auditor checks:** whether declared scope genuinely reflects
-practice. Auditors specifically probe for "scope gaming" — defining scope
-narrowly to exclude the riskiest AI systems from certification while
+**What an assessor checks:** whether declared scope genuinely reflects the organizational
+practice. Assessor probe specifically for defining scope boundaries
+to exclude the riskiest AI systems from certification while
 implying broader coverage in marketing.
 
 ---
 
 ## Clause 5 — Leadership
 
-Exists because a management system without genuine top management
-commitment decays into a paperwork exercise the moment nobody is watching.
+Genuine leadership commitment is the foundational anchor of any management system. 
+Without active executive oversight, compliance frameworks invariably deteriorate 
+into a check-the-box administrative burden that fails to manage actual operational 
+risk the moment external scrutiny subsides.
 
 **Requirements:**
 - **5.1** Leadership and commitment — ensuring policy/objectives align with
@@ -59,7 +50,7 @@ commitment decays into a paperwork exercise the moment nobody is watching.
 - **5.3** Roles, responsibilities, and authorities — assigned and
   communicated, including AIMS conformance and performance reporting
 
-**Documentation produced:** a signed, dated AI policy (typically one page,
+**Documentation:** a signed, dated AI policy (typically one page,
 principle-based), and an org chart or RACI matrix for AIMS authority.
 
 **What an auditor checks:** auditors interview actual executives to verify
