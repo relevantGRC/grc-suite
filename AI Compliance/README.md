@@ -98,4 +98,12 @@ Approach to having a stong AI starts with:
 
 ---
 
+## About This Project
+
+This project is part of my development as an AI GRC engineer. While these modules reflect my current implementation strategy, I welcome feedback from the GRC and AI engineering community.
+- YouTube: [@relevantGRC](https://www.youtube.com/@relevantGRC) — Companion video tutorials for these modules.
+- Professional Portfolio: [View my work](https://relevantgrc.github.io)
+
+---
+
 *Last updated: *
