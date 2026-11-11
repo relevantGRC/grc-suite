@@ -1,0 +1,583 @@
+{
+  "format_version": "1.0",
+  "terraform_version": "1.17.0",
+  "values": {
+    "outputs": {
+      "bucket_arn": {
+        "sensitive": false,
+        "value": "arn:aws:s3:::cgep-lab-dev-data-b5acc7af",
+        "type": "string"
+      },
+      "bucket_name": {
+        "sensitive": false,
+        "value": "cgep-lab-dev-data-b5acc7af",
+        "type": "string"
+      },
+      "encryption_algorithm": {
+        "sensitive": false,
+        "value": "AES256",
+        "type": "string"
+      },
+      "log_bucket_arn": {
+        "sensitive": false,
+        "value": "arn:aws:s3:::cgep-lab-dev-logs-b5acc7af",
+        "type": "string"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "aws_s3_bucket.log",
+          "mode": "managed",
+          "type": "aws_s3_bucket",
+          "name": "log",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::cgep-lab-dev-logs-b5acc7af",
+            "bucket": "cgep-lab-dev-logs-b5acc7af",
+            "bucket_domain_name": "cgep-lab-dev-logs-b5acc7af.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "cgep-lab-dev-logs-b5acc7af.s3.us-east-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": false,
+            "grant": [
+              {
+                "id": "63b0a1208c54ce6cc8b055b1e1db39e55eed86e08e09b51d143360bfdb7d3876",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z3AQBSTGFYJSTF",
+            "id": "cgep-lab-dev-logs-b5acc7af",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "us-east-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": null,
+            "tags_all": {
+              "ComplianceScope": "cge-p-lab",
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "cgep-lab"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_values": {
+            "cors_rule": [],
+            "grant": [
+              {
+                "permissions": [
+                  false
+                ]
+              }
+            ],
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "replication_configuration": [],
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {}
+                    ]
+                  }
+                ]
+              }
+            ],
+            "tags_all": {},
+            "versioning": [
+              {}
+            ],
+            "website": []
+          },
+          "depends_on": [
+            "random_id.bucket_suffix"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket.primary",
+          "mode": "managed",
+          "type": "aws_s3_bucket",
+          "name": "primary",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::cgep-lab-dev-data-b5acc7af",
+            "bucket": "cgep-lab-dev-data-b5acc7af",
+            "bucket_domain_name": "cgep-lab-dev-data-b5acc7af.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "cgep-lab-dev-data-b5acc7af.s3.us-east-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": false,
+            "grant": [
+              {
+                "id": "63b0a1208c54ce6cc8b055b1e1db39e55eed86e08e09b51d143360bfdb7d3876",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z3AQBSTGFYJSTF",
+            "id": "cgep-lab-dev-data-b5acc7af",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "us-east-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": null,
+            "tags_all": {
+              "ComplianceScope": "cge-p-lab",
+              "Environment": "dev",
+              "ManagedBy": "terraform",
+              "Project": "cgep-lab"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_values": {
+            "cors_rule": [],
+            "grant": [
+              {
+                "permissions": [
+                  false
+                ]
+              }
+            ],
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "replication_configuration": [],
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {}
+                    ]
+                  }
+                ]
+              }
+            ],
+            "tags_all": {},
+            "versioning": [
+              {}
+            ],
+            "website": []
+          },
+          "depends_on": [
+            "random_id.bucket_suffix"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_acl.log",
+          "mode": "managed",
+          "type": "aws_s3_bucket_acl",
+          "name": "log",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "access_control_policy": [
+              {
+                "grant": [
+                  {
+                    "grantee": [
+                      {
+                        "display_name": "",
+                        "email_address": "[REDACTED]",
+                        "id": "",
+                        "type": "Group",
+                        "uri": "http://acs.amazonaws.com/groups/s3/LogDelivery"
+                      }
+                    ],
+                    "permission": "READ_ACP"
+                  },
+                  {
+                    "grantee": [
+                      {
+                        "display_name": "",
+                        "email_address": "[REDACTED]",
+                        "id": "",
+                        "type": "Group",
+                        "uri": "http://acs.amazonaws.com/groups/s3/LogDelivery"
+                      }
+                    ],
+                    "permission": "WRITE"
+                  },
+                  {
+                    "grantee": [
+                      {
+                        "display_name": "",
+                        "email_address": "[REDACTED]",
+                        "id": "63b0a1208c54ce6cc8b055b1e1db39e55eed86e08e09b51d143360bfdb7d3876",
+                        "type": "CanonicalUser",
+                        "uri": ""
+                      }
+                    ],
+                    "permission": "FULL_CONTROL"
+                  }
+                ],
+                "owner": [
+                  {
+                    "display_name": "",
+                    "id": "63b0a1208c54ce6cc8b055b1e1db39e55eed86e08e09b51d143360bfdb7d3876"
+                  }
+                ]
+              }
+            ],
+            "acl": "log-delivery-write",
+            "bucket": "cgep-lab-dev-logs-b5acc7af",
+            "expected_bucket_owner": "",
+            "id": "cgep-lab-dev-logs-b5acc7af,log-delivery-write"
+          },
+          "sensitive_values": {
+            "access_control_policy": [
+              {
+                "grant": [
+                  {
+                    "grantee": [
+                      {}
+                    ]
+                  },
+                  {
+                    "grantee": [
+                      {}
+                    ]
+                  },
+                  {
+                    "grantee": [
+                      {}
+                    ]
+                  }
+                ],
+                "owner": [
+                  {}
+                ]
+              }
+            ]
+          },
+          "depends_on": [
+            "aws_s3_bucket.log",
+            "aws_s3_bucket_ownership_controls.log",
+            "random_id.bucket_suffix"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_logging.primary",
+          "mode": "managed",
+          "type": "aws_s3_bucket_logging",
+          "name": "primary",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "bucket": "cgep-lab-dev-data-b5acc7af",
+            "expected_bucket_owner": "",
+            "id": "cgep-lab-dev-data-b5acc7af",
+            "target_bucket": "cgep-lab-dev-logs-b5acc7af",
+            "target_grant": [],
+            "target_object_key_format": [],
+            "target_prefix": "access-logs/"
+          },
+          "sensitive_values": {
+            "target_grant": [],
+            "target_object_key_format": []
+          },
+          "depends_on": [
+            "aws_s3_bucket.log",
+            "aws_s3_bucket.primary",
+            "random_id.bucket_suffix"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_ownership_controls.log",
+          "mode": "managed",
+          "type": "aws_s3_bucket_ownership_controls",
+          "name": "log",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "bucket": "cgep-lab-dev-logs-b5acc7af",
+            "id": "cgep-lab-dev-logs-b5acc7af",
+            "rule": [
+              {
+                "object_ownership": "BucketOwnerPreferred"
+              }
+            ]
+          },
+          "sensitive_values": {
+            "rule": [
+              {}
+            ]
+          },
+          "depends_on": [
+            "aws_s3_bucket.log",
+            "random_id.bucket_suffix"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_public_access_block.log",
+          "mode": "managed",
+          "type": "aws_s3_bucket_public_access_block",
+          "name": "log",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "block_public_acls": true,
+            "block_public_policy": true,
+            "bucket": "cgep-lab-dev-logs-b5acc7af",
+            "id": "cgep-lab-dev-logs-b5acc7af",
+            "ignore_public_acls": true,
+            "restrict_public_buckets": true
+          },
+          "sensitive_values": {},
+          "depends_on": [
+            "aws_s3_bucket.log",
+            "random_id.bucket_suffix"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_public_access_block.primary",
+          "mode": "managed",
+          "type": "aws_s3_bucket_public_access_block",
+          "name": "primary",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "block_public_acls": true,
+            "block_public_policy": true,
+            "bucket": "cgep-lab-dev-data-b5acc7af",
+            "id": "cgep-lab-dev-data-b5acc7af",
+            "ignore_public_acls": true,
+            "restrict_public_buckets": true
+          },
+          "sensitive_values": {},
+          "depends_on": [
+            "aws_s3_bucket.primary",
+            "random_id.bucket_suffix"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_server_side_encryption_configuration.log",
+          "mode": "managed",
+          "type": "aws_s3_bucket_server_side_encryption_configuration",
+          "name": "log",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "bucket": "cgep-lab-dev-logs-b5acc7af",
+            "expected_bucket_owner": "",
+            "id": "cgep-lab-dev-logs-b5acc7af",
+            "rule": [
+              {
+                "apply_server_side_encryption_by_default": [
+                  {
+                    "kms_master_key_id": "",
+                    "sse_algorithm": "AES256"
+                  }
+                ],
+                "bucket_key_enabled": null
+              }
+            ]
+          },
+          "sensitive_values": {
+            "rule": [
+              {
+                "apply_server_side_encryption_by_default": [
+                  {}
+                ]
+              }
+            ]
+          },
+          "depends_on": [
+            "aws_s3_bucket.log",
+            "random_id.bucket_suffix"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_server_side_encryption_configuration.primary",
+          "mode": "managed",
+          "type": "aws_s3_bucket_server_side_encryption_configuration",
+          "name": "primary",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "bucket": "cgep-lab-dev-data-b5acc7af",
+            "expected_bucket_owner": "",
+            "id": "cgep-lab-dev-data-b5acc7af",
+            "rule": [
+              {
+                "apply_server_side_encryption_by_default": [
+                  {
+                    "kms_master_key_id": "",
+                    "sse_algorithm": "AES256"
+                  }
+                ],
+                "bucket_key_enabled": null
+              }
+            ]
+          },
+          "sensitive_values": {
+            "rule": [
+              {
+                "apply_server_side_encryption_by_default": [
+                  {}
+                ]
+              }
+            ]
+          },
+          "depends_on": [
+            "aws_s3_bucket.primary",
+            "random_id.bucket_suffix"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_versioning.primary",
+          "mode": "managed",
+          "type": "aws_s3_bucket_versioning",
+          "name": "primary",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "bucket": "cgep-lab-dev-data-b5acc7af",
+            "expected_bucket_owner": "",
+            "id": "cgep-lab-dev-data-b5acc7af",
+            "mfa": null,
+            "versioning_configuration": [
+              {
+                "mfa_delete": "",
+                "status": "Enabled"
+              }
+            ]
+          },
+          "sensitive_values": {
+            "versioning_configuration": [
+              {}
+            ]
+          },
+          "depends_on": [
+            "aws_s3_bucket.primary",
+            "random_id.bucket_suffix"
+          ]
+        },
+        {
+          "address": "random_id.bucket_suffix",
+          "mode": "managed",
+          "type": "random_id",
+          "name": "bucket_suffix",
+          "provider_name": "registry.terraform.io/hashicorp/random",
+          "schema_version": 0,
+          "values": {
+            "b64_std": "tazHrw==",
+            "b64_url": "tazHrw",
+            "byte_length": 4,
+            "dec": "3047999407",
+            "hex": "b5acc7af",
+            "id": "tazHrw",
+            "keepers": null,
+            "prefix": null
+          },
+          "sensitive_values": {}
+        }
+      ]
+    }
+  },
+  "checks": [
+    {
+      "address": {
+        "kind": "var",
+        "name": "environment",
+        "to_display": "var.environment"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "to_display": "var.environment"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "name": "project_name",
+        "to_display": "var.project_name"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "to_display": "var.project_name"
+          },
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}
