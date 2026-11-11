@@ -1,0 +1,1 @@
+{"encryption_algorithm":"google-managed-cmek-aes256","kms_rotation_period":"7776000s","public_access_prevention":"enforced","required_labels_present":true,"retention_period_days":30,"uniform_access_enforced":true,"versioning_enabled":true}
