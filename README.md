@@ -34,7 +34,9 @@ GRC knowledge is often taught as theory. The GRC Suite closes that gap with:
 
 ## About the Author
 
-I'm [Nathaniel Konu](https://www.linkedin.com/in/nkonu/), a cybersecurity professional with nearly 15 years of experience in GRC engineering, compliance automation, risk management, and security operations. My background includes:
+I'm [Nathaniel Konu](https://www.linkedin.com/in/nkonu/), a cybersecurity professional with nearly 15 years of experience in GRC engineering, compliance automation, risk management, and security operations. Currently building compliance-as-code and evidence automation pipelines, with a growing focus on AI governance.
+
+My background includes:
 
 - **Auditing:** At Insight Assurance, helped grow the audit practice, advancing from junior auditor to staff auditor.
 - **Consulting:** At SkyTech Consulting, a compliance automation consultancy, focused on automating NIST, ISO 27001/42001, FedRAMP, SOC 2, and HIPAA controls.
