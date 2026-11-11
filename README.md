@@ -1,102 +1,83 @@
 # grc-suite
-**A curated collection of tools, templates, and scripts to support Governance, Risk, and Compliance (GRC) functions across security, privacy, and audit domains.**
+
+**A curated collection of tools, labs, templates, and scripts to support Governance, Risk, and Compliance (GRC) work across security, privacy, AI governance, and audit.**
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-In%20Development-yellow" alt="Status: In Development">
-  <img src="https://img.shields.io/badge/Security-orange" alt="Security">
   <img src="https://img.shields.io/badge/Focus-GRC-blue" alt="Focus: GRC">
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License: MIT">
 </p>
 
-## Disclaimers
+## Disclaimer
 
-This is a **personal, independent project**.  
-It does **not** represent or reflect the views, opinions, or work of my current employer or any previous employers.
+This is a **personal, independent project**. It does **not** represent or reflect the views, opinions, or work of my current or previous employers.
 
-The content provided here — including code, configurations, and documentation — is **for educational purposes only**.  
-While these resources demonstrate real-world security and compliance concepts, **they should not be deployed in production without**:
-- Independent review  
-- Appropriate security testing  
-- Customization for your project or organization’s specific requirements  
+All content in this repository, including code, configurations, and documentation, is **for educational purposes only**. Before using any of it in production, you should:
+
+- Get an independent review
+- Perform appropriate security testing
+- Customize it for your project's or organization's specific requirements
 
 ## Project Vision
 
-The **GRC Suite** is designed to **empower Governance, Risk, and Compliance professionals** with **technical, hands-on skills**.
+GRC knowledge is often taught as theory. The GRC Suite closes that gap with:
 
-Too often, GRC knowledge remains theoretical. This project closes that gap by offering:
-- **Actionable labs** that bring frameworks to life
-- **Templates and mappings** that accelerate implementation
-- **Guided exercises** that align with industry best practices
+- **Actionable labs** that turn frameworks into working implementations
+- **Templates and mappings** that speed up implementation
+- **Guided exercises** aligned with industry best practices
 
-This GRC Suite is my initiative to empower Governance, Risk, and Compliance professionals with technical implementation skills. Drawing from my cybersecurity experience and deep expertise in GRC Engineering and Auditing, I've created this repository to bridge the gap between theoretical knowledge and hands-on expertise, comprehensive guidance, and a structured portfolio framework.
+**Mission:** Build an open-source resource for GRC practitioners who want to:
 
-**Mission:** is to build the industry's **go-to open-source resource** for GRC practitioners who want to:
-1. Demonstrate practical technical skills  
-2. Learn by doing — not just reading  
-3. Showcase their capabilities through a structured portfolio  
+1. Demonstrate practical technical skills
+2. Learn by doing, not just reading
+3. Showcase their capabilities through a structured portfolio
 
 ## About the Author
 
-I'm [Nathaniel Konu](https://www.linkedin.com/in/nkonu/), a cybersecurity professional with nearly 15 years of experience specializing in GRC Engineering, compliance automation, risk management, and security operation. My journey includes:
+I'm [Nathaniel Konu](https://www.linkedin.com/in/nkonu/), a cybersecurity professional with nearly 15 years of experience in GRC engineering, compliance automation, risk management, and security operations. My background includes:
 
-- **Auditing Excellence**: At Insight Assurance, helped with the growth of the audit practice, advancing from junior auditor to staff auditor.
-- **Consulting Success**: At SkyTech Consulting, a compliance automation consultancy, focusing on NIST, ISO Seriees, FedRamp, SOC 2 and HIPAA automation
-- **Corporate Innovation**: Served as a Senior GRC at npd, leading GRC and innovation initiatives including a GRC automation tool. 
-- **YouTube Learning**: Teach courses on GRC, cloud compliance and automation on my Youtube channel including GRC courses. 
-- **Current Role**: Senior GRC Engineering at Clario
+- **Auditing:** At Insight Assurance, helped grow the audit practice, advancing from junior auditor to staff auditor.
+- **Consulting:** At SkyTech Consulting, a compliance automation consultancy, focused on automating NIST, ISO 27001/42001, FedRAMP, SOC 2, and HIPAA controls.
+- **Corporate Innovation:** Served as Senior GRC at NPD, leading GRC and innovation initiatives, including a GRC automation tool.
+- **YouTube Education:** Teach GRC, cloud compliance, and automation courses on the [RelevantGRC YouTube channel](https://www.youtube.com/channel/UClRL3C3I8eWrlbISV1n1Bgg).
+- **Current Role:** Senior GRC Engineer at [confirm current employer]
 
-**Core Belief:** Compliance should be **efficient**, **accessible**, and **integrated** — blending engineering principles with GRC frameworks to enable "secure by design, compliant by default."
+**Core Belief:** Compliance should be **efficient**, **accessible**, and **integrated**, blending engineering principles with GRC frameworks to enable "secure by design, compliant by default."
 
 ## Repository Structure
 
-This repository is part of a progressive release strategy for my youtube channel  [RelevantGrc: Secure by design, Compliant by default](https://www.youtube.com/channel/UClRL3C3I8eWrlbISV1n1Bgg). Currently, it includes:
+This repository supports a progressive release strategy for the [RelevantGRC YouTube channel](https://www.youtube.com/channel/UClRL3C3I8eWrlbISV1n1Bgg). Each folder maps to a topic area:
 
 ```
-GRC_suite/
-├── LICENSE - Project license
-├── portfolio/ - My GRC portfolio
-├── labs/ - Hands-on AWS, Azure security labs with full code and documentation
-│   └── lab-1-account-governance/ - AWS account security foundations
-│   └── lab-2-control_as_code/ - AWS account security foundations
-├── resources/ - Information security guide
-│   └── AWS security services guide
-└── Frameworks/ - files for framework
-├── policies/
-│   ├── information-security-policy.md
-│   ├── access-control-policy.md
-│   └── ... 
-├── procedures/
-│   ├── risk-management-procedure.md
-│   ├── incident-response-procedure.md
-│   └── ...
-├── controls/
-│   ├── iso27001-control-matrix.xlsx
-│   ├── nist800-53-control-mapping.xlsx
-│   └── ...
-├── metrics/
-│   ├── isms-kpis-metrics.xlsx
-│   └── awareness-training-metrics.xlsx
-├── templates/
-│   ├── risk-assessment-template.docx
-│   ├── data-processing-agreement-template.docx
-│   └── ...
-├── audits/
-│   ├── internal-audit-plan.md
-│   └── findings-summary-template.docx
+grc-suite/
+├── AI Compliance/ # AI governance controls and framework mappings (includes AIMS reference material)
+├── AWS/ # AWS security labs with code and documentation
+├── Control Registry/ # Control automation registry and supporting Python tooling
+├── GRC Engineering/ # GRC engineering labs and control designs (e.g., AI access control, data protection)
+├── GRC Evidence Mapping/ # Evidence as Code automation hub and evidence mapping content
+├── Microsoft/ # Microsoft security labs (e.g., OU design and GPO enforcement)
+├── Portfolio/ # Structured GRC portfolio framework
+├── Resources/ # Reference guides (e.g., AWS security services reference)
+├── Tutorials/ # Step-by-step guides
+├── LICENSE # MIT License
 └── README.md
-
 ```
+
+## Getting Started
+
+1. Clone the repository: `git clone https://github.com/relevantGRC/grc-suite.git`
+2. Open the folder that matches your learning goal.
+3. Read each folder's `README.md` before starting a lab or tutorial.
+4. For Python-based content (for example, Control Registry), install dependencies with `pip install -r requirements.txt`.
+
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
-This project is inspired by the need for practical, hands-on resources for GRC professionals looking to demonstrate their technical capabilities in security implementation.
+This project grew out of a need for practical, hands-on resources that help GRC professionals demonstrate their technical capabilities in security implementation.
 
 ## Contact
 
-For Questions, ideas, or feedback?
-Open an Issue or connect with me via RelevantGRC on YouTube..
-
----
+Questions, ideas, or feedback? Open an issue on this repository or connect with me via [RelevantGRC on YouTube](https://www.youtube.com/channel/UClRL3C3I8eWrlbISV1n1Bgg).
