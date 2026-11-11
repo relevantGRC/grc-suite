@@ -1,0 +1,29 @@
+[
+[
+	{
+		"filename": "C:/Users/cesar/AppData/Local/Temp/broken/plan.json",
+		"namespace": "compliance.sc28_aws",
+		"successes": 0,
+		"failures": [
+			{
+				"msg": "[SC-28] aws_s3_bucket.primary: aws_s3_bucket has no matching aws_s3_bucket_server_side_encryption_configuration. Remediation: add one referencing this bucket.",
+				"metadata": {
+					"query": "data.compliance.sc28_aws.deny"
+				}
+			}
+		]
+	}
+],[
+	{
+		"filename": "C:/Users/cesar/AppData/Local/Temp/broken/plan.json",
+		"namespace": "compliance.ac3_aws",
+		"successes": 1
+	}
+],[
+	{
+		"filename": "C:/Users/cesar/AppData/Local/Temp/broken/plan.json",
+		"namespace": "compliance.cm6_aws",
+		"successes": 1
+	}
+]
+]
